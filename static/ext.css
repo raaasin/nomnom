@@ -1,0 +1,55 @@
+*{
+    font-family: 'Raleway', sans-serif;
+  }
+  
+    /* Change the background color of navbar on hover */
+  
+  html{
+    scroll-behavior: smooth;
+  }
+  body{
+    margin: 0;
+    padding: 0;
+  }
+  #mood{
+    height: 100vh;
+    background-color:#9696dd;
+    display: inline-block;
+    width: 100%;
+  }
+  #budget{
+    height: 100vh;
+    background-color:#a2f89b;
+    display: inline-block;
+    width: 100%;
+  }
+  #aesthetics{
+    height: 100vh;
+    background-color:#eb8398;
+    display: inline-block;
+    width: 100%;
+  }
+  #foodtype{
+    height: 100vh;
+    background-color:#f2ed5f;
+    display: inline-block;
+    width: 100%;
+  }
+  #diet{
+    height: 100vh;
+    background-color:#ff64c6;
+    display: inline-block;
+    width: 100%;
+  }
+  #submit{
+    height: 100vh;
+    background-color:#36c9ff;
+    display: inline-block;
+    width: 100%;
+  }
+  #result{
+    height: 100vh;
+    background-color:#f97474;
+    display: inline-block;
+    width: 100%;
+  }

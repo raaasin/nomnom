@@ -4,48 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurant Recommender</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='ext.css') }}">
 </head>
 <body>
-    <h1>Restaurant Recommender</h1>
+    
     <form method="post">
-        <label for="mood">Mood:</label>
+        <div id="mood">
+            <h1>Restaurant Recommender</h1>
+            <label for="mood">Mood:</label>
         <select name="mood">
             <option value="0">Happy</option>
             <option value="1">Unsure</option>
             <option value="2">Sad</option>
         </select><br>
-        <label for="budget">Budget:</label>
+        </div>
+        <div id="budget">
+            <label for="budget">Budget:</label>
         <select name="budget">
             <option value="0">Cheap</option>
             <option value="1">Medium</option>
             <option value="2">Expensive</option>
-        </select><br>
-        <label for="aesthetics">Restaurant Aesthetics:</label>
-        <select name="aesthetics">
-            <option value="0">Normal</option>
-            <option value="1">Good</option>
-            <option value="2">Aesthetic</option>
-        </select><br>
-        <label for="type">Type:</label>
-        <select name="type">
-            <option value="0">Vegetarian</option>
-            <option value="1">Non-vegetarian</option>
-        </select><br>
-        <label for="diet">Diet:</label>
-        <select name="diet">
-            <option value="0">Healthy</option>
-            <option value="1">Moderate</option>
-            <option value="2">Fast food</option>
-        </select><br>
-        <button type="submit">Get Recommendations</button>
+        </select>
+        </div>
+        <div id="aesthetics">
+            <label for="aesthetics">Restaurant Aesthetics:</label>
+            <select name="aesthetics">
+                <option value="0">Normal</option>
+                <option value="1">Good</option>
+                <option value="2">Aesthetic</option>
+            </select>
+        </div>
+        <div id="foodtype">
+            <label for="type">Type:</label>
+            <select name="type">
+                <option value="0">Vegetarian</option>
+                <option value="1">Non-vegetarian</option>
+            </select>
+        </div>
+        <div id="diet">
+            <label for="diet">Diet:</label>
+            <select name="diet">
+                <option value="0">Healthy</option>
+                <option value="1">Moderate</option>
+                <option value="2">Fast food</option>
+            </select>
+        </div>
+        <div id="submit">
+            <button type="submit">Get Recommendations</button>
+        </div>
     </form>
-    {% if recommendations %}
-    <h2>Top 3 Recommended Restaurants:</h2>
-    <ul>
-        {% for recommendation in recommendations %}
-        <li>{{ recommendation }}</li>
-        {% endfor %}
-    </ul>
-    {% endif %}
+        <div id="result">
+            {% if recommendations %}
+            <h2>Top 3 Recommended Restaurants:</h2>
+            <ul>
+                {% for recommendation in recommendations %}
+                <li>{{ recommendation }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
 </body>
 </html>
