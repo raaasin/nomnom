@@ -20,6 +20,7 @@
     display: flex;
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
+    flex-direction: column;
   }
   #name{
     color:#E8772E;
@@ -40,6 +41,7 @@
     display: flex;
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
+    flex-direction: column;
   }
   #aesthetics{
     color:#E8772E;
@@ -50,6 +52,7 @@
     display: flex;
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
+    flex-direction: column;
   }
   #foodtype{
     color:#E8772E;
@@ -60,6 +63,7 @@
     display: flex;
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
+    flex-direction: column;
   }
   #diet{
     color:#E8772E;
@@ -70,6 +74,7 @@
     display: flex;
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
+    flex-direction: column;
   }
   #home{
     color:#E8772E;
@@ -80,6 +85,7 @@
     display: flex;
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
+    flex-direction: column;
   
   }
 
@@ -92,6 +98,7 @@
     display: flex;
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
+    flex-direction: column;
   }
   #result{
     color:#E8772E;
@@ -102,6 +109,7 @@
     display: flex;
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
+    flex-direction: column;
   }
   .hidden{
     display: none;
@@ -121,7 +129,7 @@
 
 /* Add styles for when labels are clicked */
 .mood-option:hover {
-  background-color: #0F0F0F; 
+  background-color:none; 
 }
 .mood-option img:hover{
   transform: scale(1.1); /* Scale the image to 110% of its original size */
@@ -136,5 +144,5 @@
 
 /* Style the selected label */
 .mood-option input[type="radio"]:checked + img {
-  border-color: #007bff; /* Change the border color for the selected image */
+  border-color:none;/* Change the border color for the selected image */
 }
