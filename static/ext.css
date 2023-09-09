@@ -159,11 +159,14 @@ button {
   height:60px;
   width:200px;
   font-size:20px;
+  transition: 0.5ms;
 }
 
 /* Hover effect (optional) */
 button:hover {
   background-color: #f39633;
+  transform: scale(1.1); /* Scale the image to 110% of its original size */
+  transition: transform 0.5s ease;
 }
 #next{
     height: 50px;
