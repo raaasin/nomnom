@@ -13,18 +13,18 @@
 
   }
   #mood{
-    color:#f0f0f0;
+    color:#E8772E;
     height: 100vh;
-    background-color:#0F0F0F;
+    background-color:#ECAB55;
     width: 100%;
     display: flex;
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
   }
   #name{
-    color:#f0f0f0;
+    color:#E8772E;
     height: 100vh;
-    background-color:#0F0F0F;
+    background-color:#ECAB55;
     display: inline-block;
     width: 100%;
     display: flex;
@@ -32,9 +32,9 @@
     align-items: center; /* Center vertically */
   }
   #budget{
-    color:#f0f0f0;
+    color:#E8772E;
     height: 100vh;
-    background-color:#0F0F0F;
+    background-color:#ECAB55;
     display: inline-block;
     width: 100%;
     display: flex;
@@ -42,9 +42,9 @@
     align-items: center; /* Center vertically */
   }
   #aesthetics{
-    color:#f0f0f0;
+    color:#E8772E;
     height: 100vh;
-    background-color:#0F0F0F;
+    background-color:#ECAB55;
     display: inline-block;
     width: 100%;
     display: flex;
@@ -52,9 +52,9 @@
     align-items: center; /* Center vertically */
   }
   #foodtype{
-    color:#f0f0f0;
+    color:#E8772E;
     height: 100vh;
-    background-color:#0F0F0F;
+    background-color:#ECAB55;
     display: inline-block;
     width: 100%;
     display: flex;
@@ -62,9 +62,9 @@
     align-items: center; /* Center vertically */
   }
   #diet{
-    color:#f0f0f0;
+    color:#E8772E;
     height: 100vh;
-    background-color:#0F0F0F;
+    background-color:#ECAB55;
     display: inline-block;
     width: 100%;
     display: flex;
@@ -72,9 +72,9 @@
     align-items: center; /* Center vertically */
   }
   #home{
-    color:#f0f0f0;
+    color:#E8772E;
     height: 100vh;
-    background-color:#0F0F0F;
+    background-color:#ECAB55;
     display: inline-block;
     width: 100%;
     display: flex;
@@ -84,9 +84,9 @@
   }
 
   #submit{
-    color:#f0f0f0;
+    color:#E8772E;
     height: 100vh;
-    background-color:#0F0F0F;
+    background-color:#ECAB55;
     display: inline-block;
     width: 100%;
     display: flex;
@@ -94,9 +94,9 @@
     align-items: center; /* Center vertically */
   }
   #result{
-    color:#f0f0f0;
+    color:#E8772E;
     height: 100vh;
-    background-color:#0F0F0F;
+    background-color:#ECAB55;
     display: inline-block;
     width: 100%;
     display: flex;
