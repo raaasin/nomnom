@@ -10,6 +10,7 @@
   body{
     margin: 0;
     padding: 0;
+    overflow:hidden;
 
   }
   #mood{
@@ -21,6 +22,7 @@
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
     flex-direction: column;
+    
   }
   #name{
     color:#E8772E;
@@ -154,6 +156,9 @@ button {
   padding: 10px 20px;
   border-radius: 8px;
   cursor: pointer;
+  height:60px;
+  width:200px;
+  font-size:20px;
 }
 
 /* Hover effect (optional) */
@@ -201,7 +206,7 @@ ul {
     font-size: 100px; /* Adjust font size as needed, e.g., 2em to match h1 */
 }
 h1{
-font-size:100px;
+font-size:90px;
 }
 #submitButton{
     background-color: #E8772E;
@@ -214,4 +219,11 @@ font-size:100px;
     width: 500px;
     font-size: 30px;
     border-radius: 7px;
+}
+.logo{
+  position:absolute;
+  top:20px;
+  left:47%;
+  height:85px;
+  width:85px;
 }
