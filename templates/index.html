@@ -18,7 +18,7 @@
             <button type="button"><a href="#mood">Next</a></button>
         </div>
         <div id="mood">
-            <h1>nomnom</h1>
+            <h1>Mood Happy,Neutral,sad</h1>
             <div class="mood-options">
                 <label class="mood-option">
                     <input type="radio" name="mood" value="0">
@@ -36,47 +36,79 @@
             
             <br>
         <button type="button"><a href="#name">Back</a></button>
-        <button type="button"><a href="#budget">Next</a></button>
 
         </div>
         <div id="budget">
-            <label for="budget">Budget:</label>
-        <select name="budget">
-            <option value="0">Cheap</option>
-            <option value="1">Medium</option>
-            <option value="2">Expensive</option>
-        </select><br>
+            <h1>Budget Cheap,Medium,Expensive</h1>
+                        <div class="mood-options">
+                <label class="mood-option">
+                    <input type="radio" name="budget" value="0">
+                    <img src="https://freepngimg.com/thumb/emoji/4-2-smiling-face-with-sunglasses-cool-emoji-png.png" alt="Cheap">
+                </label>
+                <label class="mood-option">
+                    <input type="radio" name="budget" value="1">
+                    <img src="https://freepngimg.com/thumb/emoji/2-2-grinning-face-emoji-png-thumb.png" alt="Medium">
+                </label>
+                <label class="mood-option">
+                    <input type="radio" name="budget" value="2">
+                    <img src="https://freepngimg.com/thumb/emoji/11-2-loudly-crying-emoji-png-thumb.png" alt="Expensive">
+                </label>
+            </div>
+            <br>
+            
         <button type="button"><a href="#mood">Back</a></button>
-        <button type="button"><a href="#aesthetics">Next</a></button>
         </div>
         <div id="aesthetics">
-            <label for="aesthetics">Restaurant Aesthetics:</label>
-            <select name="aesthetics">
-                <option value="0">Normal</option>
-                <option value="1">Good</option>
-                <option value="2">Aesthetic</option>
-            </select><br>
+            <h1>Aesthetics Normal,good,aesthetic</h1>
+            <div class="mood-options">
+                <label class="mood-option">
+                    <input type="radio" name="aesthetics" value="0">
+                    <img src="https://freepngimg.com/thumb/emoji/4-2-smiling-face-with-sunglasses-cool-emoji-png.png" alt="Normal">
+                </label>
+                <label class="mood-option">
+                    <input type="radio" name="aesthetics" value="1">
+                    <img src="https://freepngimg.com/thumb/emoji/2-2-grinning-face-emoji-png-thumb.png" alt="Good">
+                </label>
+                <label class="mood-option">
+                    <input type="radio" name="aesthetics" value="2">
+                    <img src="https://freepngimg.com/thumb/emoji/11-2-loudly-crying-emoji-png-thumb.png" alt="Aesthetic">
+                </label>
+            </div><br>
             <button type="button"><a href="#budget">Back</a></button>
-            <button type="button"><a href="#foodtype">Next</a></button>
         </div>
         <div id="foodtype">
-            <label for="type">Type:</label>
-            <select name="type">
-                <option value="0">Vegetarian</option>
-                <option value="1">Non-vegetarian</option>
-            </select><br>
+            <h1>FoodType</h1>
+            <label for="type">Type: Veg,Nonveg</label>
+            <div class="mood-options">
+                <label class="mood-option">
+                    <input type="radio" name="type" value="0">
+                    <img src="https://freepngimg.com/thumb/emoji/4-2-smiling-face-with-sunglasses-cool-emoji-png.png" alt="Vegetarian">
+                </label>
+                <label class="mood-option">
+                    <input type="radio" name="type" value="1">
+                    <img src="https://freepngimg.com/thumb/emoji/2-2-grinning-face-emoji-png-thumb.png" alt="Non-Vegetarian">
+                </label>
+            </div><br>
             <button type="button"><a href="#aesthetics">Back</a></button>
-            <button type="button"><a href="#diet">Next</a></button>
         </div>
         <div id="diet">
-            <label for="diet">Diet:</label>
-            <select name="diet">
-                <option value="0">Healthy</option>
-                <option value="1">Moderate</option>
-                <option value="2">Fast food</option>
-            </select><br>
+            <h1>Diet</h1>
+            <label for="diet">Diet: Healthy,Moderate,Fastfood</label>
+            <div class="mood-options">
+                <label class="mood-option">
+                    <input type="radio" name="diet" value="0">
+                    <img src="https://freepngimg.com/thumb/emoji/4-2-smiling-face-with-sunglasses-cool-emoji-png.png" alt="Healthy">
+                </label>
+                <label class="mood-option">
+                    <input type="radio" name="diet" value="1">
+                    <img src="https://freepngimg.com/thumb/emoji/2-2-grinning-face-emoji-png-thumb.png" alt="Moderate">
+                </label>
+                <label class="mood-option">
+                    <input type="radio" name="diet" value="2">
+                    <img src="https://freepngimg.com/thumb/emoji/11-2-loudly-crying-emoji-png-thumb.png" alt="Fast-Food">
+                </label>
+            </div><br>
             <button type="button"><a href="#foodtype">Back</a></button>
-            <button type="button"><a href="#submit">Next</a></button>
         </div>
         <div id="submit">
             <button type="submit" id="submitButton">Get Recommendations</button>
@@ -141,6 +173,66 @@ document.addEventListener("DOMContentLoaded", function() {
             if (this.checked) {
                 // Scroll to the element with id "budget"
                 const budgetElement = document.getElementById("budget");
+                if (budgetElement) {
+                    budgetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+    });
+});
+document.addEventListener("DOMContentLoaded", function() {
+    const radioButtons = document.querySelectorAll('input[name="budget"]');
+    
+    radioButtons.forEach(function(radioButton) {
+        radioButton.addEventListener("change", function() {
+            if (this.checked) {
+                // Scroll to the element with id "budget"
+                const budgetElement = document.getElementById("aesthetics");
+                if (budgetElement) {
+                    budgetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+    });
+});
+document.addEventListener("DOMContentLoaded", function() {
+    const radioButtons = document.querySelectorAll('input[name="aesthetics"]');
+    
+    radioButtons.forEach(function(radioButton) {
+        radioButton.addEventListener("change", function() {
+            if (this.checked) {
+                // Scroll to the element with id "budget"
+                const budgetElement = document.getElementById("foodtype");
+                if (budgetElement) {
+                    budgetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+    });
+});
+document.addEventListener("DOMContentLoaded", function() {
+    const radioButtons = document.querySelectorAll('input[name="type"]');
+    
+    radioButtons.forEach(function(radioButton) {
+        radioButton.addEventListener("change", function() {
+            if (this.checked) {
+                // Scroll to the element with id "budget"
+                const budgetElement = document.getElementById("diet");
+                if (budgetElement) {
+                    budgetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+    });
+});
+document.addEventListener("DOMContentLoaded", function() {
+    const radioButtons = document.querySelectorAll('input[name="diet"]');
+    
+    radioButtons.forEach(function(radioButton) {
+        radioButton.addEventListener("change", function() {
+            if (this.checked) {
+                // Scroll to the element with id "budget"
+                const budgetElement = document.getElementById("submit");
                 if (budgetElement) {
                     budgetElement.scrollIntoView({ behavior: 'smooth' });
                 }
