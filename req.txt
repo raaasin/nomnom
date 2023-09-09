@@ -1,0 +1,6 @@
+req
+pandas
+numpy
+flask
+scikit-learn
+gunicorn
