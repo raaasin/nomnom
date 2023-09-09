@@ -17,7 +17,9 @@
     height: 100vh;
     background-color:#0F0F0F;
     width: 100%;
-    display: inline-block;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
   }
   #name{
     color:#f0f0f0;
@@ -25,6 +27,9 @@
     background-color:#0F0F0F;
     display: inline-block;
     width: 100%;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
   }
   #budget{
     color:#f0f0f0;
@@ -32,6 +37,9 @@
     background-color:#0F0F0F;
     display: inline-block;
     width: 100%;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
   }
   #aesthetics{
     color:#f0f0f0;
@@ -39,6 +47,9 @@
     background-color:#0F0F0F;
     display: inline-block;
     width: 100%;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
   }
   #foodtype{
     color:#f0f0f0;
@@ -46,6 +57,9 @@
     background-color:#0F0F0F;
     display: inline-block;
     width: 100%;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
   }
   #diet{
     color:#f0f0f0;
@@ -53,6 +67,9 @@
     background-color:#0F0F0F;
     display: inline-block;
     width: 100%;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
   }
   #home{
     color:#f0f0f0;
@@ -60,6 +77,9 @@
     background-color:#0F0F0F;
     display: inline-block;
     width: 100%;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
   
   }
 
@@ -69,6 +89,9 @@
     background-color:#0F0F0F;
     display: inline-block;
     width: 100%;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
   }
   #result{
     color:#f0f0f0;
@@ -76,6 +99,9 @@
     background-color:#0F0F0F;
     display: inline-block;
     width: 100%;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
   }
   .hidden{
     display: none;
