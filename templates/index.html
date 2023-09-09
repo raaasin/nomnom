@@ -10,115 +10,117 @@
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='ext.css') }}">
 </head>
 <body>
-    <div id="home">
-        HOME somethng something <br>
-        <a href="#name"><button>Lets try it out!</button></a>
-    </div>
-    <form method="post" id="myForm">
-        <div id="name">
-            Whats your nameeee<br>
-            <input type="text">
-            <button type="button"><a href="#mood">Next</a></button>
+    <center>
+        <div id="home">
+            HOME somethng something <br>
+            <a href="#name"><button>Lets try it out!</button></a>
         </div>
-        <div id="mood">
-            <h1>Hey buddy! How you doin?</h1><br>
-            <div class="mood-options">
-                <label class="mood-option">
-                    <input type="radio" name="mood" value="0">
-                    <img src="../static/images/happy.png" alt="Happy">
-                </label>
-                <label class="mood-option">
-                    <input type="radio" name="mood" value="1">
-                    <img src="../static/images/unsure.png" alt="Neutral">
-                </label>
-                <label class="mood-option">
-                    <input type="radio" name="mood" value="2">
-                    <img src="../static/images/sad.png" alt="Sad">
-                </label>
+        <form method="post" id="myForm">
+            <div id="name">
+                Whats your nameeee<br>
+                <input type="text">
+                <button type="button"><a href="#mood">Next</a></button>
             </div>
-            
-            <br>
-        <button type="button"><a href="#name">Back</a></button>
-
-        </div>
-        <div id="budget">
-            <h1>Budget Cheap,Medium,Expensive</h1><br>
-                        <div class="mood-options">
-                <label class="mood-option">
-                    <input type="radio" name="budget" value="0">
-                    <img src="../static/images/broke.png" alt="Cheap">
-                </label>
-                <label class="mood-option">
-                    <input type="radio" name="budget" value="1">
-                    <img src="../static/images/moderate.png" alt="Medium">
-                </label>
-                <label class="mood-option">
-                    <input type="radio" name="budget" value="2">
-                    <img src="../static/images/rich.png" alt="Expensive">
-                </label>
+            <div id="mood">
+                <h1>Hey buddy! How you doin?</h1><br>
+                <div class="mood-options">
+                    <label class="mood-option">
+                        <input type="radio" name="mood" value="0">
+                        <img src="../static/images/happy.png" alt="Happy">
+                    </label>
+                    <label class="mood-option">
+                        <input type="radio" name="mood" value="1">
+                        <img src="../static/images/unsure.png" alt="Neutral">
+                    </label>
+                    <label class="mood-option">
+                        <input type="radio" name="mood" value="2">
+                        <img src="../static/images/sad.png" alt="Sad">
+                    </label>
+                </div>
+                
+                <br>
+            <button type="button"><a href="#name">Back</a></button>
+    
             </div>
-            <br>
-            
-        <button type="button"><a href="#mood">Back</a></button>
+            <div id="budget">
+                <h1>Budget Cheap,Medium,Expensive</h1><br>
+                            <div class="mood-options">
+                    <label class="mood-option">
+                        <input type="radio" name="budget" value="0">
+                        <img src="../static/images/broke.png" alt="Cheap">
+                    </label>
+                    <label class="mood-option">
+                        <input type="radio" name="budget" value="1">
+                        <img src="../static/images/moderate.png" alt="Medium">
+                    </label>
+                    <label class="mood-option">
+                        <input type="radio" name="budget" value="2">
+                        <img src="../static/images/rich.png" alt="Expensive">
+                    </label>
+                </div>
+                <br>
+                
+            <button type="button"><a href="#mood">Back</a></button>
+            </div>
+            <div id="aesthetics">
+                <h1>Aesthetics Normal,good,aesthetic</h1><br>
+                <div class="mood-options">
+                    <label class="mood-option">
+                        <input type="radio" name="aesthetics" value="0">
+                        <img src="https://freepngimg.com/thumb/emoji/4-2-smiling-face-with-sunglasses-cool-emoji-png.png" alt="Normal">
+                    </label>
+                    <label class="mood-option">
+                        <input type="radio" name="aesthetics" value="1">
+                        <img src="https://freepngimg.com/thumb/emoji/2-2-grinning-face-emoji-png-thumb.png" alt="Good">
+                    </label>
+                    <label class="mood-option">
+                        <input type="radio" name="aesthetics" value="2">
+                        <img src="https://freepngimg.com/thumb/emoji/11-2-loudly-crying-emoji-png-thumb.png" alt="Aesthetic">
+                    </label>
+                </div><br>
+                <button type="button"><a href="#budget">Back</a></button>
+            </div>
+            <div id="foodtype">
+                <h1>FoodType</h1>
+                <label for="type">Type: Veg,Nonveg</label><br>
+                <div class="mood-options">
+                    <label class="mood-option">
+                        <input type="radio" name="type" value="0">
+                        <img src="../static/images/veg.png" alt="Vegetarian">
+                    </label>
+                    <label class="mood-option">
+                        <input type="radio" name="type" value="1">
+                        <img src="../static/images/non veg.png" alt="Non-Vegetarian">
+                    </label>
+                </div><br>
+                <button type="button"><a href="#aesthetics">Back</a></button>
+            </div>
+            <div id="diet">
+                <h1>Diet</h1>
+                <label for="diet">Diet: Healthy,Moderate,Fastfood</label><br>
+                <div class="mood-options">
+                    <label class="mood-option">
+                        <input type="radio" name="diet" value="0">
+                        <img src="../static/images/healthy.png" alt="Healthy">
+                    </label>
+                    <label class="mood-option">
+                        <input type="radio" name="diet" value="1">
+                        <img src="../static/images/moderate food.png" alt="Moderate">
+                    </label>
+                    <label class="mood-option">
+                        <input type="radio" name="diet" value="2">
+                        <img src="../static/images/fast food.png" alt="Fast-Food">
+                    </label>
+                </div><br>
+                <button type="button"><a href="#foodtype">Back</a></button>
+            </div>
+            <div id="submit">
+                <button type="submit" id="submitButton">Get Recommendations</button>
+            </div>
+        </form>
+        <div id="result">
         </div>
-        <div id="aesthetics">
-            <h1>Aesthetics Normal,good,aesthetic</h1><br>
-            <div class="mood-options">
-                <label class="mood-option">
-                    <input type="radio" name="aesthetics" value="0">
-                    <img src="https://freepngimg.com/thumb/emoji/4-2-smiling-face-with-sunglasses-cool-emoji-png.png" alt="Normal">
-                </label>
-                <label class="mood-option">
-                    <input type="radio" name="aesthetics" value="1">
-                    <img src="https://freepngimg.com/thumb/emoji/2-2-grinning-face-emoji-png-thumb.png" alt="Good">
-                </label>
-                <label class="mood-option">
-                    <input type="radio" name="aesthetics" value="2">
-                    <img src="https://freepngimg.com/thumb/emoji/11-2-loudly-crying-emoji-png-thumb.png" alt="Aesthetic">
-                </label>
-            </div><br>
-            <button type="button"><a href="#budget">Back</a></button>
-        </div>
-        <div id="foodtype">
-            <h1>FoodType</h1>
-            <label for="type">Type: Veg,Nonveg</label><br>
-            <div class="mood-options">
-                <label class="mood-option">
-                    <input type="radio" name="type" value="0">
-                    <img src="../static/images/veg.png" alt="Vegetarian">
-                </label>
-                <label class="mood-option">
-                    <input type="radio" name="type" value="1">
-                    <img src="../static/images/non veg.png" alt="Non-Vegetarian">
-                </label>
-            </div><br>
-            <button type="button"><a href="#aesthetics">Back</a></button>
-        </div>
-        <div id="diet">
-            <h1>Diet</h1>
-            <label for="diet">Diet: Healthy,Moderate,Fastfood</label><br>
-            <div class="mood-options">
-                <label class="mood-option">
-                    <input type="radio" name="diet" value="0">
-                    <img src="../static/images/healthy.png" alt="Healthy">
-                </label>
-                <label class="mood-option">
-                    <input type="radio" name="diet" value="1">
-                    <img src="../static/images/moderate food.png" alt="Moderate">
-                </label>
-                <label class="mood-option">
-                    <input type="radio" name="diet" value="2">
-                    <img src="../static/images/fast food.png" alt="Fast-Food">
-                </label>
-            </div><br>
-            <button type="button"><a href="#foodtype">Back</a></button>
-        </div>
-        <div id="submit">
-            <button type="submit" id="submitButton">Get Recommendations</button>
-        </div>
-    </form>
-    <div id="result">
-    </div>
+    </center>
 </body>
 <script>
    document.addEventListener("DOMContentLoaded", function () {
