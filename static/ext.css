@@ -68,3 +68,32 @@
   .hidden{
     display: none;
   }
+  /* Hide the radio buttons */
+.mood-option input[type="radio"] {
+  display: none;
+}
+
+/* Style the label as clickable */
+.mood-option {
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  margin: 10px;
+}
+
+/* Add styles for when labels are clicked */
+.mood-option:hover {
+  background-color: #f0f0f0; /* Change the background color on hover */
+}
+
+/* Style the images */
+.mood-option img {
+  width: 100px; /* Adjust the image width as needed */
+  height: 100px; /* Adjust the image height as needed */
+  border: 2px solid transparent; /* Add a border to the images */
+}
+
+/* Style the selected label */
+.mood-option input[type="radio"]:checked + img {
+  border-color: #007bff; /* Change the border color for the selected image */
+}

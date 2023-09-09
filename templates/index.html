@@ -19,12 +19,22 @@
         </div>
         <div id="mood">
             <h1>nomnom</h1>
-            <label for="mood">Mood:</label>
-        <select name="mood">
-            <option value="0" >Happy</option>
-            <option value="1">Unsure</option>
-            <option value="2">Sad</option>    
-        </select><br>
+            <div class="mood-options">
+                <label class="mood-option">
+                    <input type="radio" name="mood" value="0">
+                    <img src="https://freepngimg.com/thumb/emoji/4-2-smiling-face-with-sunglasses-cool-emoji-png.png" alt="Happy">
+                </label>
+                <label class="mood-option">
+                    <input type="radio" name="mood" value="1">
+                    <img src="https://freepngimg.com/thumb/emoji/2-2-grinning-face-emoji-png-thumb.png" alt="Neutral">
+                </label>
+                <label class="mood-option">
+                    <input type="radio" name="mood" value="2">
+                    <img src="https://freepngimg.com/thumb/emoji/11-2-loudly-crying-emoji-png-thumb.png" alt="Sad">
+                </label>
+            </div>
+            
+            <br>
         <button type="button"><a href="#name">Back</a></button>
         <button type="button"><a href="#budget">Next</a></button>
 
@@ -121,6 +131,21 @@
             .catch((error) => {
                 console.error("Error:", error);
             });
+    });
+});
+document.addEventListener("DOMContentLoaded", function() {
+    const radioButtons = document.querySelectorAll('input[name="mood"]');
+    
+    radioButtons.forEach(function(radioButton) {
+        radioButton.addEventListener("change", function() {
+            if (this.checked) {
+                // Scroll to the element with id "budget"
+                const budgetElement = document.getElementById("budget");
+                if (budgetElement) {
+                    budgetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
     });
 });
 </script>
