@@ -137,9 +137,10 @@
 }
 /* Style the images */
 .mood-option img {
-  width: 100px; /* Adjust the image width as needed */
-  height: 100px; /* Adjust the image height as needed */
+  width: 175px; /* Adjust the image width as needed */
+  height: 175px; /* Adjust the image height as needed */
   border: 2px solid transparent; /* Add a border to the images */
+  margin-left: 20px;
 }
 
 /* Style the selected label */
@@ -160,25 +161,30 @@ button:hover {
   background-color: #f39633;
 }
 #next{
-    height: 30px;
-    width: 32px;
+    height: 50px;
+    width: 50px;
     top: 50px;
 }
 #back{
-    height: 30px;
-    width: 32px;
-    rotate: 180;
+    height: 50px;
+    width: 50px;
+    transform: rotate(180deg);
 }
-input[type=text]{
-    border-radius: 20px;
+input[type=area]{
+    border-radius: 7px;
     background-color: #E8772E;
     color: white;
-    margin: 15px;
-    height: 30px;
+    margin: 0px;
+    height: 80px;
+    width: 350px;
+    border: #fff;
     outline-color:#E8772E;
     caret-color: #E8772E;
+    margin: 15px;
+    font-size: 50px;
 }
-input[type="text"]::selection {
+input[type="area"]::selection {
+    font-size: xx-large;
     border-color: #E8772E;;
 }
 ::selection {
@@ -189,3 +195,23 @@ input[type="text"]::selection {
     color: #232324;
     background: #E8772E;
   }
+  
+ul {
+    list-style: none; /* Remove bullet points */
+    font-size: 100px; /* Adjust font size as needed, e.g., 2em to match h1 */
+}
+h1{
+font-size:100px;
+}
+#submitButton{
+    background-color: #E8772E;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    height: 200px;
+    width: 500px;
+    font-size: 30px;
+    border-radius: 7px;
+}
