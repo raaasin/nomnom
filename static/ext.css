@@ -1,5 +1,5 @@
 *{
-    font-family: 'Raleway', sans-serif;
+  font-family: 'Balsamiq Sans', cursive;
   }
   
     /* Change the background color of navbar on hover */
@@ -10,60 +10,98 @@
   body{
     margin: 0;
     padding: 0;
+
   }
   #mood{
+    color:#f0f0f0;
     height: 100vh;
-    background-color:#9696dd;
-    display: inline-block;
+    background-color:#0F0F0F;
     width: 100%;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
   }
   #name{
+    color:#f0f0f0;
     height: 100vh;
-    background-color:#9696dd;
+    background-color:#0F0F0F;
     display: inline-block;
     width: 100%;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
   }
   #budget{
+    color:#f0f0f0;
     height: 100vh;
-    background-color:#a2f89b;
+    background-color:#0F0F0F;
     display: inline-block;
     width: 100%;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
   }
   #aesthetics{
+    color:#f0f0f0;
     height: 100vh;
-    background-color:#eb8398;
+    background-color:#0F0F0F;
     display: inline-block;
     width: 100%;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
   }
   #foodtype{
+    color:#f0f0f0;
     height: 100vh;
-    background-color:#f2ed5f;
+    background-color:#0F0F0F;
     display: inline-block;
     width: 100%;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
   }
   #diet{
+    color:#f0f0f0;
     height: 100vh;
-    background-color:#ff64c6;
+    background-color:#0F0F0F;
     display: inline-block;
     width: 100%;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
   }
   #home{
+    color:#f0f0f0;
     height: 100vh;
-    background-color:#ff64c6;
+    background-color:#0F0F0F;
     display: inline-block;
     width: 100%;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+  
   }
+
   #submit{
+    color:#f0f0f0;
     height: 100vh;
-    background-color:#36c9ff;
+    background-color:#0F0F0F;
     display: inline-block;
     width: 100%;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
   }
   #result{
+    color:#f0f0f0;
     height: 100vh;
-    background-color:#f97474;
+    background-color:#0F0F0F;
     display: inline-block;
     width: 100%;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
   }
   .hidden{
     display: none;
