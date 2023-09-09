@@ -1,26 +1,51 @@
-Restaurant,Cuisine,Budget,Aesthetics,Type,Diet,Rating
-Heavenly Delights,Bakery,Cheap,Normal,Vegetarian,Healthy,4.2
-Cozy Corner,Cafe,Medium,Good,Both,Moderate,4.5
-Retro Bites,Diner,Medium,Normal,Both,Fast Food,3.8
-Spice Odyssey,Indian,Expensive,Aesthetic,Non-vegetarian,Moderate,4.0
-Bella Cucina,Italian,Expensive,Good,Both,Healthy,4.8
-Mama's Kitchen,Homestyle,Cheap,Good,Both,Healthy,4.1
-Sushi Delight,Japanese,Medium,Aesthetic,Both,Healthy,4.6
-Pasta Paradise,Italian,Medium,Normal,Both,Moderate,4.3
-The BBQ Joint,American,Expensive,Aesthetic,Non-vegetarian,Moderate,4.4
-The Veggie Villa,Vegetarian,Cheap,Good,Vegetarian,Healthy,4.0
-Fast 'n Tasty,Fast Food,Cheap,Normal,Both,Fast Food,3.5
-Fine Dining Experience,French,Expensive,Aesthetic,Both,Healthy,4.7
-Taste of India,Indian,Medium,Good,Both,Moderate,4.2
-Sizzling Steakhouse,Steakhouse,Expensive,Aesthetic,Non-vegetarian,Healthy,4.5
-Thai Treat,Thai,Medium,Aesthetic,Both,Healthy,4.4
-Pizza Palace,Pizza,Cheap,Normal,Both,Fast Food,3.9
-Seafood Sensation,Seafood,Expensive,Aesthetic,Non-vegetarian,Moderate,4.3
-Vegan Delights,Vegetarian,Medium,Good,Vegetarian,Healthy,4.6
-Burger Barn,Burgers,Cheap,Normal,Both,Fast Food,3.7
-Mexican Fiesta,Mexican,Medium,Aesthetic,Both,Moderate,4.1
-Chinese Delight,Chinese,Medium,Good,Both,Healthy,4.0
-The Grilled Corner,Grill,Expensive,Aesthetic,Non-vegetarian,Moderate,4.2
-Greek Taverna,Greek,Medium,Normal,Both,Moderate,4.3
-Crispy Crust,Pizza,Cheap,Normal,Both,Fast Food,3.8
-Indian Spice House,Indian,Medium,Good,Both,Moderate,4.5
+﻿Restaurant,Cuisine,Budget,Aesthetics,Type,Diet,Rating
+The Eatery,Cafe,Expensive,Normal,Both,Moderate,4.2
+Welcome Cafe Oceanic Restaurant,Diner,Expensive,Good,Both,Moderate,4.3
+7th Phase,Indian,Medium,Normal,Non-vegetarian,Fast Food,4.3
+Barbeque Nation,Diner,Medium,Good,Both,Moderate,4.4
+Flying Spaghetti Monster,Italian,Medium,Good,Vegetarian,Healthy,4.0
+Mekong Restaurant,Asian,Expensive,Aesthetic,Non-vegetarian,Fast Food,4.1
+Dakshin Restaurant,South Indian,Cheap,Normal,Vegetarian,Healthy,3.9
+Upland Bistro,Mexican,Expensive,Good,Both,Moderate,4.3
+The Spicy Venu Restaurant,Indian,Cheap,Normal,Vegetarian,Healthy,4.0
+Ming Garden,Chinese,Expensive,Normal,Non-vegetarian,Fast Food,4.2
+Platform 65,Diner,Medium,Good,Both,Moderate,4.4
+Horizon Restaurant,South Indian,Cheap,Good,Both,Healthy,4.1
+Celebrations Restaurant,Indian,Cheap,Normal,Vegetarian,Healthy,4.0
+INBOX Multi Cuisine Restaurant,Indian,Cheap,Normal,Non-vegetarian,Healthy,3.9
+Barkaas,Arab,Expensive,Aesthetic,Non-vegetarian,Fast Food,4.2
+Aqua,Bakery,Cheap,Normal,Both,Moderate,4.1
+My Restaurant,Indian,Cheap,Normal,Vegetarian,Healthy,4.0
+Kanhaji Restaurant,Grill,Medium,Normal,Non-vegetarian,Healthy,4.2
+Arabian Restaurant,Arab,Expensive,Aesthetic,Non-vegetarian,Fast Food,4.0
+The Square,Mexican,Medium,Aesthetic,Both,Moderate,4.4
+District 12 Resto Café,Cafe,Cheap,Good,Both,Healthy,4.3
+Uma Parlour,Indian,Cheap,Normal,Vegetarian,Healthy,4.0
+Sam's Griddle,Grill,Medium,Normal,Both,Moderate,4.2
+BRUNCH & SUPPER,Chinese,Cheap,Good,Both,Fast Food,3.8
+Waltair Kitchen,Indian,Cheap,Normal,Vegetarian,Healthy,4.0
+Maong's Restaurant,Chinese,Medium,Good,Non-vegetarian,Fast Food,3.9
+Dolphin Restaurant,Indian,Cheap,Normal,Vegetarian,Healthy,3.7
+Eaters Stop,South Indian,Medium,Normal,Both,Moderate,4.0
+V Nawabi Darbar,Nawab,Expensive,Aesthetic,Non-vegetarian,Healthy,4.2
+Royal Foodies,Indian,Cheap,Normal,Both,Moderate,4.0
+Fusion Foods,Seafood,Expensive,Good,Non-vegetarian,Fast Food,4.2
+MandiCroods,Arab,Medium,Aesthetic,Non-vegetarian,Fast Food,4.1
+WILD & MILD BBQ,Grill,Medium,Good,Non-vegetarian,Moderate,4.0
+Raju's Kitchen,Indian,Cheap,Good,Both,Healthy,4.0
+SVN Food House,Diner,Cheap,Normal,Both,Moderate,3.9
+Taj Hyderabadi,Biryani,Medium,Normal,Non-vegetarian,Fast Food,4.0
+Gad,Italian,Expensive,Aesthetic,Both,Moderate,4.0
+Sizzlly Chicken,Indian,Medium,Good,Non-vegetarian,Moderate,4.5
+Millet Zone,Tiffin,Cheap,Normal,Vegetarian,Healthy,4.4
+7 To 9 Foods,Asian,Medium,Good,Both,Moderate,4.1
+Mom's Magic,Bakery,Medium,Aesthetic,Both,Fast Food,4.2
+Mindis Restaurant,Indian,Medium,Normal,Vegetarian,Healthy,4.6
+Bcafe,Cafe,Cheap,Good,Vegetarian,Moderate,4.0
+Zaffran,Indian,Expensive,Aesthetic,Both,Fast Food,4.0
+Indo-Arabic Restaurant,Arab,Expensive,Aesthetic,Non-vegetarian,Moderate,4.1
+Choose Your Fry,South Indian,Cheap,Normal,Both,Healthy,4.0
+KFC,American,Expensive,Good,Non-vegetarian,Healthy,4.1
+4 Seasons Bakery,Bakery,Medium,Normal,Vegetarian,Healthy,3.7
+KUNG FU CHOP,Chinese,Medium,Aesthetic,Both,Moderate,4.0
+The Asian,Asian,Expensive,Good,Non-vegetarian,Fast Food,4.1

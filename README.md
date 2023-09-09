@@ -60,11 +60,6 @@ We welcome contributions to improve Nomnom. If you'd like to contribute, please 
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## Acknowledgments
-
-- [OpenAI](https://openai.com) for providing the foundation for this project.
-- Our amazing contributors and users for helping make Nomnom better.
-
 ## Support
 
 If you have any questions or encounter issues, please feel free to [open an issue](https://github.com/yourusername/nomnom/issues). We're here to help!
