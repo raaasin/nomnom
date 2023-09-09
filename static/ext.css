@@ -121,9 +121,12 @@
 
 /* Add styles for when labels are clicked */
 .mood-option:hover {
-  background-color: #f0f0f0; /* Change the background color on hover */
+  background-color: #0F0F0F; 
 }
-
+.mood-option img:hover{
+  transform: scale(1.1); /* Scale the image to 110% of its original size */
+  transition: transform 0.5s ease;
+}
 /* Style the images */
 .mood-option img {
   width: 100px; /* Adjust the image width as needed */
