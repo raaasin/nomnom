@@ -17,6 +17,12 @@
     display: inline-block;
     width: 100%;
   }
+  #name{
+    height: 100vh;
+    background-color:#9696dd;
+    display: inline-block;
+    width: 100%;
+  }
   #budget{
     height: 100vh;
     background-color:#a2f89b;
@@ -41,6 +47,12 @@
     display: inline-block;
     width: 100%;
   }
+  #home{
+    height: 100vh;
+    background-color:#ff64c6;
+    display: inline-block;
+    width: 100%;
+  }
   #submit{
     height: 100vh;
     background-color:#36c9ff;
@@ -52,4 +64,7 @@
     background-color:#f97474;
     display: inline-block;
     width: 100%;
+  }
+  .hidden{
+    display: none;
   }

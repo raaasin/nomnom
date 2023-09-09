@@ -7,16 +7,27 @@
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='ext.css') }}">
 </head>
 <body>
-    
-    <form method="post">
+    <div id="home">
+        HOME somethng something
+        <a href="#name"><button>Lets try it out!</button></a>
+    </div>
+    <form method="post" id="myForm">
+        <div id="name">
+            Whats your nameeee
+            <input type="text">
+            <button type="button"><a href="#mood">Next</a></button>
+        </div>
         <div id="mood">
-            <h1>Restaurant Recommender</h1>
+            <h1>nomnom</h1>
             <label for="mood">Mood:</label>
         <select name="mood">
-            <option value="0">Happy</option>
+            <option value="0" >Happy</option>
             <option value="1">Unsure</option>
-            <option value="2">Sad</option>
+            <option value="2">Sad</option>    
         </select><br>
+        <button type="button"><a href="#name">Back</a></button>
+        <button type="button"><a href="#budget">Next</a></button>
+
         </div>
         <div id="budget">
             <label for="budget">Budget:</label>
@@ -24,7 +35,9 @@
             <option value="0">Cheap</option>
             <option value="1">Medium</option>
             <option value="2">Expensive</option>
-        </select>
+        </select><br>
+        <button type="button"><a href="#mood">Back</a></button>
+        <button type="button"><a href="#aesthetics">Next</a></button>
         </div>
         <div id="aesthetics">
             <label for="aesthetics">Restaurant Aesthetics:</label>
@@ -32,14 +45,18 @@
                 <option value="0">Normal</option>
                 <option value="1">Good</option>
                 <option value="2">Aesthetic</option>
-            </select>
+            </select><br>
+            <button type="button"><a href="#budget">Back</a></button>
+            <button type="button"><a href="#foodtype">Next</a></button>
         </div>
         <div id="foodtype">
             <label for="type">Type:</label>
             <select name="type">
                 <option value="0">Vegetarian</option>
                 <option value="1">Non-vegetarian</option>
-            </select>
+            </select><br>
+            <button type="button"><a href="#aesthetics">Back</a></button>
+            <button type="button"><a href="#diet">Next</a></button>
         </div>
         <div id="diet">
             <label for="diet">Diet:</label>
@@ -47,21 +64,64 @@
                 <option value="0">Healthy</option>
                 <option value="1">Moderate</option>
                 <option value="2">Fast food</option>
-            </select>
+            </select><br>
+            <button type="button"><a href="#foodtype">Back</a></button>
+            <button type="button"><a href="#submit">Next</a></button>
         </div>
         <div id="submit">
-            <button type="submit">Get Recommendations</button>
+            <button type="submit" id="submitButton">Get Recommendations</button>
         </div>
     </form>
-        <div id="result">
-            {% if recommendations %}
-            <h2>Top 3 Recommended Restaurants:</h2>
-            <ul>
-                {% for recommendation in recommendations %}
-                <li>{{ recommendation }}</li>
-                {% endfor %}
-            </ul>
-            {% endif %}
-        </div>
+    <div id="result">
+    </div>
 </body>
+<script>
+   document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("myForm");
+    const resultScreen = document.getElementById("result");
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        // Serialize form data into JSON
+        const formData = new FormData(form);
+        const formDataObj = {};
+        formData.forEach((value, key) => {
+            formDataObj[key] = value;
+        });
+
+        // Send a POST request to Flask using AJAX
+        fetch("/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded", // Change content type
+            },
+            body: new URLSearchParams(formDataObj).toString(), // Serialize as URL-encoded
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                // Handle the response (data) from the server
+                if (data.recommendations && data.recommendations.length > 0) {
+                    const recommendationsList = document.createElement("ul");
+                    data.recommendations.forEach((recommendation) => {
+                        const listItem = document.createElement("li");
+                        listItem.textContent = recommendation;
+                        recommendationsList.appendChild(listItem);
+                    });
+                    resultScreen.innerHTML = "";
+                    resultScreen.appendChild(recommendationsList);
+                    window.location.href = "#result";
+                } else if (data.error) {
+                    resultScreen.textContent = "Error: " + data.error;
+    
+                } else {
+                    resultScreen.innerHTML = "No recommendations found.";
+                }
+            })
+            .catch((error) => {
+                console.error("Error:", error);
+            });
+    });
+});
+</script>
 </html>
