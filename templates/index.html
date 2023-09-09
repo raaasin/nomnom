@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://kit.fontawesome.com/2ffa0d5e9f.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Raleway&display=swap" rel="stylesheet">
@@ -21,7 +22,7 @@
         <form method="post" id="myForm">
             <div id="name">
                 <h1>Your name?</h1>
-                <input type="area">
+                <input type="area" id="personal">
                 <a href="#mood" ><img src="../static/images/arrow.png" id="next"></a>
             </div>
             <div id="mood">
@@ -120,11 +121,12 @@
             </div>
         </form>
         <div id="result">
+            <button type="reset">redo <i class="fa-solid fa-rotate-right fa-spin" style="color: #ffffff;"></i></button>
         </div>
     </center>
 </body>
 <script>
-   document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("myForm");
     const resultScreen = document.getElementById("result");
 
@@ -158,10 +160,23 @@
                     });
                     resultScreen.innerHTML = "";
                     resultScreen.appendChild(recommendationsList);
+
+                    // Add the "redo" button below the recommendations
+                    const redoButton = document.createElement("button");
+                    redoButton.type = "reset";
+                    redoButton.id="redoeverything"
+                    redoButton.innerHTML = 'Redo <i class="fa-solid fa-rotate-right fa-spin" style="color: #ffffff;"></i>';
+                    resultScreen.appendChild(redoButton);
+                    const red= document.getElementById("redoeverything");
+                    redoButton.addEventListener("click", function () {
+                        location.reload();
+                        window.location.href = "/";
+                    });
+
                     window.location.href = "#result";
                 } else if (data.error) {
                     resultScreen.textContent = "Error: " + data.error;
-    
+
                 } else {
                     resultScreen.innerHTML = "No recommendations found.";
                 }
@@ -171,6 +186,8 @@
             });
     });
 });
+
+
 document.addEventListener("DOMContentLoaded", function() {
     const radioButtons = document.querySelectorAll('input[name="mood"]');
     
@@ -246,5 +263,25 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+
+const inputField = document.getElementById('personal');
+const nextButton = document.getElementById('next');
+
+
+inputField.addEventListener('keydown', function (event) {
+    if (event.keyCode === 13) {
+        // Trigger a click event on the "Next" button
+        nextButton.click();
+    }
+});
+// Get a reference to the "redo" button
+const redoButton = document.getElementById("redoButton");
+
+// Add an event listener to the "redo" button
+redoButton.addEventListener("click", function () {
+    // Reload the page
+    location.reload();
+});
+
 </script>
 </html>

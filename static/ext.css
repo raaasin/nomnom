@@ -203,7 +203,7 @@ input[type="area"]::selection {
   
 ul {
     list-style: none; /* Remove bullet points */
-    font-size: 100px; /* Adjust font size as needed, e.g., 2em to match h1 */
+    font-size: 80px; /* Adjust font size as needed, e.g., 2em to match h1 */
 }
 h1{
 font-size:90px;
