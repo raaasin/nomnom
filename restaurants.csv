@@ -1,10 +1,26 @@
 Restaurant,Cuisine,Budget,Aesthetics,Type,Diet,Rating
-Heavenly Delights,Bakery,Cheap,Normal,Both,Fast Food,4.2
-Cozy Corner,Cafe,Medium,Good,Both,Healthy,4.5
-Retro Bites,Diner,Medium,Aesthetic,Both,Moderate,3.8
-Spice Odyssey,Indian,Medium,Normal,Both,Healthy,4.0
-Nissa Cucina,Italian,Expensive,Aesthetic,Both,Fast Food,4.8
-Very mild Corner,Cafe,Medium,Aesthetic,Both,Healthy,4.5
-Medium tenat,Diner,Medium,Normal,Both,Moderate,3.5
-Goodness Odyssey,Indian,Medium,Normal,Both,Healthy,3.2
-Sanja Buddha,Italian,Cheap,Normal,Both,Fast Food,4.0
+Heavenly Delights,Bakery,Cheap,Normal,Vegetarian,Healthy,4.2
+Cozy Corner,Cafe,Medium,Good,Both,Moderate,4.5
+Retro Bites,Diner,Medium,Normal,Both,Fast Food,3.8
+Spice Odyssey,Indian,Expensive,Aesthetic,Non-vegetarian,Moderate,4.0
+Bella Cucina,Italian,Expensive,Good,Both,Healthy,4.8
+Mama's Kitchen,Homestyle,Cheap,Good,Both,Healthy,4.1
+Sushi Delight,Japanese,Medium,Aesthetic,Both,Healthy,4.6
+Pasta Paradise,Italian,Medium,Normal,Both,Moderate,4.3
+The BBQ Joint,American,Expensive,Aesthetic,Non-vegetarian,Moderate,4.4
+The Veggie Villa,Vegetarian,Cheap,Good,Vegetarian,Healthy,4.0
+Fast 'n Tasty,Fast Food,Cheap,Normal,Both,Fast Food,3.5
+Fine Dining Experience,French,Expensive,Aesthetic,Both,Healthy,4.7
+Taste of India,Indian,Medium,Good,Both,Moderate,4.2
+Sizzling Steakhouse,Steakhouse,Expensive,Aesthetic,Non-vegetarian,Healthy,4.5
+Thai Treat,Thai,Medium,Aesthetic,Both,Healthy,4.4
+Pizza Palace,Pizza,Cheap,Normal,Both,Fast Food,3.9
+Seafood Sensation,Seafood,Expensive,Aesthetic,Non-vegetarian,Moderate,4.3
+Vegan Delights,Vegetarian,Medium,Good,Vegetarian,Healthy,4.6
+Burger Barn,Burgers,Cheap,Normal,Both,Fast Food,3.7
+Mexican Fiesta,Mexican,Medium,Aesthetic,Both,Moderate,4.1
+Chinese Delight,Chinese,Medium,Good,Both,Healthy,4.0
+The Grilled Corner,Grill,Expensive,Aesthetic,Non-vegetarian,Moderate,4.2
+Greek Taverna,Greek,Medium,Normal,Both,Moderate,4.3
+Crispy Crust,Pizza,Cheap,Normal,Both,Fast Food,3.8
+Indian Spice House,Indian,Medium,Good,Both,Moderate,4.5
