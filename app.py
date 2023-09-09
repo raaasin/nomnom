@@ -1,6 +1,6 @@
 import numpy as np
 from flask import Flask, render_template, request
-from sklearn.metrics.pairwise import euclidean_distances
+from sklearn.metrics.pairwise import cosine_similarity
 import pandas as pd
 
 app = Flask(__name__)
@@ -38,16 +38,11 @@ def index():
         # Map categorical values to numerical labels
         user_profile = np.array([category_mapping.get(category, 0) for category in user_profile])
 
-        # Calculate similarity using Euclidean distance (you can experiment with different metrics)
-        content_similarities = euclidean_distances([user_profile], data[['Budget', 'Aesthetics', 'Type', 'Diet']].applymap(lambda x: category_mapping[x]))
+        # Calculate cosine similarity
+        content_similarities = cosine_similarity([user_profile], data[['Budget', 'Aesthetics', 'Type', 'Diet']].applymap(lambda x: category_mapping[x]))
         content_similarities = content_similarities.flatten()
 
-        collab_similarities = np.array([0.8, 0.6, 0.5, 0.7, 0.9])  # Similarity scores for collaborative filtering
-
-        # Ensure both arrays have the same length
-        min_length = min(len(content_similarities), len(collab_similarities))
-        content_similarities = content_similarities[:min_length]
-        collab_similarities = collab_similarities[:min_length]
+        collab_similarities = np.random.rand(len(data))  # Random similarity scores for collaborative filtering
 
         weights = np.array([0.7, 0.3])  # Adjust weights based on preference
         hybrid_scores = (content_similarities * weights[0]) + (collab_similarities * weights[1])
