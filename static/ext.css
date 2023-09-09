@@ -146,3 +146,46 @@
 .mood-option input[type="radio"]:checked + img {
   border-color:none;/* Change the border color for the selected image */
 }
+button {
+  background-color: #E8772E;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Hover effect (optional) */
+button:hover {
+  background-color: #f39633;
+}
+#next{
+    height: 30px;
+    width: 32px;
+    top: 50px;
+}
+#back{
+    height: 30px;
+    width: 32px;
+    rotate: 180;
+}
+input[type=text]{
+    border-radius: 20px;
+    background-color: #E8772E;
+    color: white;
+    margin: 15px;
+    height: 30px;
+    outline-color:#E8772E;
+    caret-color: #E8772E;
+}
+input[type="text"]::selection {
+    border-color: #E8772E;;
+}
+::selection {
+    color:#232324;
+    background: #E8772E;
+  }
+  ::-moz-selection { /* Code for Firefox */
+    color: #232324;
+    background: #E8772E;
+  }
