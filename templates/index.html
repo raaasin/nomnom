@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4809428776211178"
+     crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/2ffa0d5e9f.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,9 +27,12 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin: 20px 60px; 
+            margin: 5px 110px; 
         }
-
+        .mood-option:hover{
+            transform: scale(1.1);
+            transition: transform 0.5s ease;
+        }
         input[type="radio"] {
             display: none;
         }
@@ -108,20 +113,20 @@
                     <label class="mood-option">
                         <input type="radio" name="aesthetics" value="0">
                         <i class="fas fa-star"></i>
-                        <span>nay</span>
+                        <span><h2>nay</h2></span>
                     </label>
                     <label class="mood-option">
                         <input type="radio" name="aesthetics" value="1">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
-                        <span>meh</span>
+                        <span><h2>meh</h2></span>
                     </label>
                     <label class="mood-option">
                         <input type="radio" name="aesthetics" value="2">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
-                        <span>yay</span>
+                        <span><h2>yay</h2></span>
                     </label>
                 </div>
                 <a href="#budget"><img src="../static/images/arrow.png" id="back"></a>
@@ -196,6 +201,9 @@ document.addEventListener("DOMContentLoaded", function () {
             .then((data) => {
                 // Handle the response (data) from the server
                 if (data.recommendations && data.recommendations.length > 0) {
+                    const uname = document.createElement("h1");
+                    uname.textContent = document.getElementById("personal").value;
+                    resultScreen.appendChild(uname); // Append to resultScreen, not username
                     const recommendationsList = document.createElement("ul");
                     data.recommendations.forEach((recommendation) => {
                         const listItem = document.createElement("li");
@@ -208,10 +216,10 @@ document.addEventListener("DOMContentLoaded", function () {
                     // Add the "redo" button below the recommendations
                     const redoButton = document.createElement("button");
                     redoButton.type = "reset";
-                    redoButton.id="redoeverything"
+                    redoButton.id = "redoeverything";
                     redoButton.innerHTML = 'Redo <i class="fa-solid fa-rotate-right fa-spin" style="color: #ffffff;"></i>';
                     resultScreen.appendChild(redoButton);
-                    const red= document.getElementById("redoeverything");
+                    const red = document.getElementById("redoeverything");
                     redoButton.addEventListener("click", function () {
                         location.reload();
                         window.location.href = "/";

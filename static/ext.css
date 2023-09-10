@@ -11,6 +11,7 @@
     margin: 0;
     padding: 0;
     overflow:hidden;
+    background-color: #ECAB55;;
 
   }
   #mood{
@@ -224,9 +225,10 @@ font-size:90px;
     border-radius: 7px;
 }
 .logo{
+  display: flex;
   position:absolute;
   top:20px;
   left:47%;
-  height:85px;
-  width:85px;
+  height: 100px;
+width: auto;
 }
