@@ -5,24 +5,7 @@ import pandas as pd
 
 app = Flask(__name__)
 
-# Load a larger dataset from CSV (Replace 'restaurants.csv' with your actual CSV file)
 data = pd.read_csv('restaurants.csv')
-
-# Dictionary to map categorical values to numerical labels
-category_mapping = {
-    'Cheap': 0,
-    'Medium': 1,
-    'Expensive': 2,
-    'Aesthetic': 0,
-    'Good': 1,
-    'Normal': 2,
-    'Both': 0,
-    'Non-vegetarian': 1,
-    'Vegetarian': 2,
-    'Fast Food': 0,
-    'Healthy': 1,
-    'Moderate': 2
-}
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
