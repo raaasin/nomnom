@@ -268,8 +268,10 @@ document.addEventListener("DOMContentLoaded", function () {
                             const imgElement = document.createElement("img");
                             imgElement.src = recommendation.ImageURL;
                             imgElement.alt = recommendation.Restaurant;
-                        
+                            
+
                             const restaurantLink = document.createElement("a");
+                            restaurantLink.target = "_blank";
                             restaurantLink.href = recommendation.URL;
                             restaurantLink.textContent = recommendation.Restaurant;
 
