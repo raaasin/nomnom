@@ -238,3 +238,13 @@ p{
   margin: 10px;
   font-size: 40px;
 }
+.res-container{
+  width:60%;
+  height:20%;
+  display:flexbox;
+}
+.img-container{
+  width:20%;
+  height:20%;
+  display:flexbox;
+}
