@@ -241,10 +241,34 @@ p{
 .res-container{
   width:60%;
   height:20%;
-  display:flexbox;
+  display:flex;
+  margin: 2%;
 }
 .img-container{
-  width:20%;
-  height:20%;
-  display:flexbox;
+ left: 0;
+  max-width: 300px; /* Set the maximum width you want */
+  max-height: 200px; /* Set the maximum height you want */
+  overflow: hidden; /* Hide any overflowing content */
+  display: inline-block; /* Display the container inline */
+}
+.text-container{
+  width: auto;
+  height: auto;
+  display: flex;
+  right: 0;
+}
+.img-container img {
+  width: 100%; /* Ensure the image takes the full width of the container */
+  height: auto; /* Automatically adjust the height to maintain aspect ratio */
+}
+
+.text-container p{
+  /* applies to rating*/
+  font-size: small;
+}
+
+.text-container a{
+  /*applies to anchor tag*/
+  color: #232324;
+  right: 0;
 }
