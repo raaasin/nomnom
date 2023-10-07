@@ -137,11 +137,11 @@
                 <h1>Veggie Delight or Meaty Marvel</h1><br>
                 <div class="mood-options">
                     <label class="mood-option">
-                        <input type="radio" name="type" value="0">
+                        <input type="radio" name="type" value="Veg">
                         <img src="../static/images/veg.png" alt="Veg">
                     </label>
                     <label class="mood-option">
-                        <input type="radio" name="type" value="1">
+                        <input type="radio" name="type" value="Nonveg">
                         <img src="../static/images/non veg.png" alt="Nonveg">
                     </label>
                 </div><br>
@@ -151,15 +151,15 @@
                 <h1>Healthy choices,just Meh or high calories</h1><br>
                 <div class="mood-options">
                     <label class="mood-option">
-                        <input type="radio" name="diet" value="0">
+                        <input type="radio" name="diet" value="Healthy">
                         <img src="../static/images/healthy.png" alt="Healthy">
                     </label>
                     <label class="mood-option">
-                        <input type="radio" name="diet" value="1">
+                        <input type="radio" name="diet" value="Moderate">
                         <img src="../static/images/moderate food.png" alt="Moderate">
                     </label>
                     <label class="mood-option">
-                        <input type="radio" name="diet" value="2">
+                        <input type="radio" name="diet" value="Fast Food">
                         <img src="../static/images/fast food.png" alt="Fast Food">
                     </label>
                 </div><br>
@@ -190,7 +190,7 @@ document.addEventListener("DOMContentLoaded", function () {
             formDataObj[key] = value;
         });
 
-        // Send a POST request to Flask using AJAX
+        console.log(formDataObj)
         fetch("/", {
             method: "POST",
             headers: {
@@ -200,6 +200,8 @@ document.addEventListener("DOMContentLoaded", function () {
         })
             .then((response) => response.json())
             .then((data) => {
+                console.log(data)
+                
                 // Handle the response (data) from the server
                 if (data.recommendations && data.recommendations.length > 0) {
                     const uname = document.createElement("h1");
