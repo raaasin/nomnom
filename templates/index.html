@@ -178,7 +178,6 @@
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("myForm");
-    const resultScreen = document.getElementById("result");
 
     form.addEventListener("submit", function (e) {
         e.preventDefault();
@@ -190,7 +189,8 @@ document.addEventListener("DOMContentLoaded", function () {
             formDataObj[key] = value;
         });
 
-        console.log(formDataObj)
+        console.log(formDataObj);
+
         fetch("/", {
             method: "POST",
             headers: {
@@ -198,49 +198,23 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             body: new URLSearchParams(formDataObj).toString(), // Serialize as URL-encoded
         })
-            .then((response) => response.json())
-            .then((data) => {
-                console.log(data)
-                
-                // Handle the response (data) from the server
-                if (data.recommendations && data.recommendations.length > 0) {
-                    const uname = document.createElement("h1");
-                    uname.textContent = document.getElementById("personal").value;
-                    resultScreen.appendChild(uname); // Append to resultScreen, not username
-                    const recommendationsList = document.createElement("ul");
-                    data.recommendations.forEach((recommendation) => {
-                        const listItem = document.createElement("li");
-                        listItem.textContent = recommendation;
-                        recommendationsList.appendChild(listItem);
-                    });
-                    resultScreen.innerHTML = "";
-                    resultScreen.appendChild(recommendationsList);
-
-                    // Add the "redo" button below the recommendations
-                    const redoButton = document.createElement("button");
-                    redoButton.type = "reset";
-                    redoButton.id = "redoeverything";
-                    redoButton.innerHTML = 'Redo <i class="fa-solid fa-rotate-right fa-spin" style="color: #ffffff;"></i>';
-                    resultScreen.appendChild(redoButton);
-                    const red = document.getElementById("redoeverything");
-                    redoButton.addEventListener("click", function () {
-                        location.reload();
-                        window.location.href = "/";
-                    });
-
-                    window.location.href = "#result";
-                } else if (data.error) {
-                    resultScreen.textContent = "Error: " + data.error;
-
-                } else {
-                    resultScreen.innerHTML = "No recommendations found.";
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error("Network response was not ok");
                 }
+                return response.json();
+            })
+            .then((data) => {
+                // Handle the response (data) from the server by printing it to the console
+                console.log(data);
             })
             .catch((error) => {
+                // Handle any errors that may occur during the fetch request
                 console.error("Error:", error);
             });
     });
 });
+
 </script>
 
 
