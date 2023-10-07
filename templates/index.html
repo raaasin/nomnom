@@ -280,7 +280,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // Handle the response (data) from the server
                 resultScreen.innerHTML = ''; // Clear previous content
 
-                if (data && Array.isArray(data)) {
+                if (data && Array.isArray(data) && data.some(item => item.Restaurant)) {
                     if (data.length > 0) {
                         const uname = document.createElement("p");
                         uname.textContent = document.getElementById("personal").value + ", Try these :)";
@@ -330,15 +330,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
                         window.location.href = "#result";
                     } else {
-                        resultScreen.textContent = "No recommendations found.";
+                        const uname = document.createElement("p");
+                        uname.textContent = document.getElementById("personal").value + ", You're taste is unlike others, unfortunately I cant find any 😔";
+                        resultScreen.append(uname);
+                        window.location.href = "#result";
                     }
                 } else if (data.error) {
-                    resultScreen.textContent = "Error: " + data.error;
+                    const uname = document.createElement("p");
+                        uname.textContent = document.getElementById("personal").value + ", You're taste is unlike others, unfortunately I cant find any 😔";
+                        resultScreen.append(uname);
+                    window.location.href = "#result";
                 }
             })
             .catch((error) => {
                 console.error("Error:", error);
-                resultScreen.textContent = "An error occurred while fetching data.";
+                const uname = document.createElement("p");
+                uname.textContent = document.getElementById("personal").value + ", You're taste is unlike others, unfortunately I cant find any 😔";
+                resultScreen.append(uname);
+                window.location.href = "#result";
             });
     });
 });
