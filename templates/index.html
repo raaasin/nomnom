@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4809428776211178"
      crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/2ffa0d5e9f.js" crossorigin="anonymous"></script>
@@ -174,10 +175,12 @@
         </div>
     </center>
 </body>
+
+
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("myForm");
-    const resultScreen = document.getElementById("result");
+    const resultScreen = $("#result");
 
     form.addEventListener("submit", function (e) {
         e.preventDefault();
@@ -207,27 +210,42 @@ document.addEventListener("DOMContentLoaded", function () {
                     if (data.length > 0) {
                         const uname = document.createElement("p");
                         uname.textContent = document.getElementById("personal").value + ", Try these :)";
-                        resultScreen.appendChild(uname);
-
+                        resultScreen.append(uname);
+                        
                         const recommendationsList = document.createElement("ul");
 
                         data.forEach((recommendation) => {
-                            const listItem = document.createElement("li");
-                            const restaurantLink = document.createElement("ul");
-                            /*restaurantLink.href = recommendation.URL;*/
+                            var resbox = $("<div class='res-container'></div>");
+                            var imgbox = $("<div class='img-container'></div>");
+                            var textbox= $("<div class='text-container'></div>");
+                            const imgElement = document.createElement("img");
+                            imgElement.src = recommendation.ImageURL;
+                            imgElement.alt = recommendation.Restaurant;
+                        
+                            const restaurantLink = document.createElement("a");
+                            restaurantLink.href = recommendation.URL;
                             restaurantLink.textContent = recommendation.Restaurant;
-                            listItem.appendChild(restaurantLink);
-                            recommendationsList.appendChild(listItem);
+
+                            const rating = document.createElement("p");
+                            rating.textContent=recommendation.Rating;
+
+                            imgbox.append(imgElement);
+                            textbox.append(restaurantLink);
+                            textbox.append(rating);
+                            resbox.append(imgbox);
+                            resbox.append(textbox);
+                            resultScreen.append(resbox);
                         });
 
-                        resultScreen.appendChild(recommendationsList);
+
+                        
 
                         // Add the "redo" button below the recommendations
                         const redoButton = document.createElement("button");
                         redoButton.type = "reset";
                         redoButton.id = "redoEverything";
                         redoButton.innerHTML = 'Redo <i class="fa-solid fa-rotate-right fa-spin" style="color: #ffffff;"></i>';
-                        resultScreen.appendChild(redoButton);
+                        resultScreen.append(redoButton);
 
                         redoButton.addEventListener("click", function () {
                             location.reload();
