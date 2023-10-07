@@ -21,10 +21,6 @@ h1  {
         font-size: 23px;
     }
     
-.logo {
-        height: 60px;
-      }
-
        .logo{
             display: block;
             position:absolute;
@@ -45,11 +41,13 @@ h1  {
         }
 
         #name{
+            margin-top: 0;
+            padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center; /* Optional: Center items horizontally */
             justify-content: center; /* Optional: Center items vertically */
-            text-align: center; /* Optional: Center text horizontally */
+            text-align: center  ; /* Optional: Center text horizontally */
             top:50%;
         }
             .mood-option img {
@@ -57,8 +55,31 @@ h1  {
             height: 75px; /* Adjust the image height as needed */
             border: 2px solid transparent; /* Add a border to the images */
             margin-left: 0px;
+            margin: 0px;
             }
-     
+            .mood-options{
+                display:block;
+                flex-direction: column;
+            }
+            #aesthetics .mood-option{
+                flex-direction: row;
+                margin-bottom: 18px;
+            }
+            #submitButton{
+                height: 112px;
+                width: 336px;
+            }
+            .res-container{
+                width: 90%;
+                height: 15%; 
+            }
+            p{
+                display: block;
+    margin-block-start: -186px;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+            }
 }
         #aesthetics {
             text-align: center;
@@ -96,6 +117,12 @@ h1  {
         /* Customize the selected radio button */
         input[type="radio"]:checked + label .fas {
             color: #E8772E;
+        }
+        h2{
+            display: inline;
+        }
+        .fas fa-star{
+            display: inline;
         }
     </style>
 </head>
