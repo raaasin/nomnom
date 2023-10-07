@@ -232,3 +232,9 @@ font-size:90px;
   height: 100px;
 width: auto;
 }
+p{
+  color: #E8772E;
+  align-items: center;
+  margin: 10px;
+  font-size: 40px;
+}

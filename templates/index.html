@@ -174,10 +174,10 @@
         </div>
     </center>
 </body>
-<script src="ext.js"></script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("myForm");
+    const resultScreen = document.getElementById("result");
 
     form.addEventListener("submit", function (e) {
         e.preventDefault();
@@ -198,19 +198,53 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             body: new URLSearchParams(formDataObj).toString(), // Serialize as URL-encoded
         })
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error("Network response was not ok");
-                }
-                return response.json();
-            })
+            .then((response) => response.json())
             .then((data) => {
-                // Handle the response (data) from the server by printing it to the console
-                console.log(data);
+                // Handle the response (data) from the server
+                resultScreen.innerHTML = ''; // Clear previous content
+
+                if (data && Array.isArray(data)) {
+                    if (data.length > 0) {
+                        const uname = document.createElement("p");
+                        uname.textContent = document.getElementById("personal").value + ", Try these :)";
+                        resultScreen.appendChild(uname);
+
+                        const recommendationsList = document.createElement("ul");
+
+                        data.forEach((recommendation) => {
+                            const listItem = document.createElement("li");
+                            const restaurantLink = document.createElement("ul");
+                            /*restaurantLink.href = recommendation.URL;*/
+                            restaurantLink.textContent = recommendation.Restaurant;
+                            listItem.appendChild(restaurantLink);
+                            recommendationsList.appendChild(listItem);
+                        });
+
+                        resultScreen.appendChild(recommendationsList);
+
+                        // Add the "redo" button below the recommendations
+                        const redoButton = document.createElement("button");
+                        redoButton.type = "reset";
+                        redoButton.id = "redoEverything";
+                        redoButton.innerHTML = 'Redo <i class="fa-solid fa-rotate-right fa-spin" style="color: #ffffff;"></i>';
+                        resultScreen.appendChild(redoButton);
+
+                        redoButton.addEventListener("click", function () {
+                            location.reload();
+                            window.location.href = "/";
+                        });
+
+                        window.location.href = "#result";
+                    } else {
+                        resultScreen.textContent = "No recommendations found.";
+                    }
+                } else if (data.error) {
+                    resultScreen.textContent = "Error: " + data.error;
+                }
             })
             .catch((error) => {
-                // Handle any errors that may occur during the fetch request
                 console.error("Error:", error);
+                resultScreen.textContent = "An error occurred while fetching data.";
             });
     });
 });
@@ -308,13 +342,6 @@ inputField.addEventListener('keydown', function (event) {
     }
 });
 // Get a reference to the "redo" button
-const redoButton = document.getElementById("redoButton");
-
-// Add an event listener to the "redo" button
-redoButton.addEventListener("click", function () {
-    // Reload the page
-    location.reload();
-});
 
 </script>
 </html>

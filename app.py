@@ -68,6 +68,8 @@ def index():
 
             print(recommendations)
 
+            if len(recommendations)==0:
+                return jsonify(None)
             if len(recommendations) > 3:
                 return jsonify(recommendations[:3])
             else:
