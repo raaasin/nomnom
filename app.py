@@ -1,6 +1,5 @@
 import numpy as np
 from flask import Flask, render_template, request, jsonify
-from sklearn.metrics.pairwise import cosine_similarity
 import pandas as pd
 
 app = Flask(__name__)
