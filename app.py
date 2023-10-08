@@ -1,6 +1,6 @@
-import numpy as np
 from flask import Flask, render_template, request, jsonify
 import pandas as pd
+import random
 
 app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
@@ -53,7 +53,9 @@ def index():
                 filtered_df = filtered_df[filtered_df['Aesthetics'] == 'Aesthetic']
 
             #sort using rating
-            sorted_df = filtered_df.sort_values(by='Rating', ascending=False)
+            #print(filtered_df.head())
+            sorted_df = filtered_df.sample(frac=1, random_state=random.seed())
+            sorted_df = sorted_df.reset_index(drop=True)
 
             recommendations = []
             for _, row in sorted_df.iterrows():
