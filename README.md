@@ -56,14 +56,4 @@ Follow these steps to get started with Nomnom:
 
 We welcome contributions to improve Nomnom. If you'd like to contribute, please follow our [Contribution Guidelines](CONTRIBUTING.md).
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-## Support
-
-If you have any questions or encounter issues, please feel free to [open an issue](https://github.com/yourusername/nomnom/issues). We're here to help!
-
----
-
 Happy dining with Nomnom! 🍽️
