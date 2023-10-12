@@ -325,8 +325,10 @@ document.addEventListener("DOMContentLoaded", function () {
                         resultScreen.append(redoButton);
 
                         redoButton.addEventListener("click", function () {
+                           /* theirvalue = document.getElementById("personal").value;*/
                             location.reload();
                             window.location.href = "/";
+                            /*document.getElementById("personal").value=theivalue;*/
                         });
 
                         window.location.href = "#result";
@@ -349,6 +351,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 uname.textContent = document.getElementById("personal").value + ", You're taste is unlike others, unfortunately I cant find any 😔";
                 resultScreen.append(uname);
                 window.location.href = "#result";
+                theirname = document.getElementById("personal")
+                
             });
     });
 });
@@ -365,6 +369,7 @@ document.addEventListener("DOMContentLoaded", function() {
     radioButtons.forEach(function(radioButton) {
         radioButton.addEventListener("change", function() {
             if (this.checked) {
+              
                 // Scroll to the element with id "budget"
                 const budgetElement = document.getElementById("budget");
                 if (budgetElement) {
