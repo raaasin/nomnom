@@ -11,13 +11,13 @@
     margin: 0;
     padding: 0;
     overflow:hidden;
-    background-color: #ECAB55;;
+    background-color: #ffffff;;
 
   }
   #mood{
     color:#E8772E;
     height: 100vh;
-    background-color:#ECAB55;
+    background-color:#ffffff;
     width: 100%;
     display: flex;
     justify-content: center; /* Center horizontally */
@@ -28,7 +28,7 @@
   #name{
     color:#E8772E;
     height: 100vh;
-    background-color:#ECAB55;
+    background-color:#ffffff;
     display: inline-block;
     width: 100%;
     display: flex;
@@ -38,7 +38,7 @@
   #budget{
     color:#E8772E;
     height: 100vh;
-    background-color:#ECAB55;
+    background-color:#ffffff;
     display: inline-block;
     width: 100%;
     display: flex;
@@ -49,7 +49,7 @@
   #aesthetics{
     color:#E8772E;
     height: 100vh;
-    background-color:#ECAB55;
+    background-color:#ffffff;
     display: inline-block;
     width: 100%;
     display: flex;
@@ -60,7 +60,7 @@
   #foodtype{
     color:#E8772E;
     height: 100vh;
-    background-color:#ECAB55;
+    background-color:#ffffff;
     display: inline-block;
     width: 100%;
     display: flex;
@@ -71,7 +71,7 @@
   #diet{
     color:#E8772E;
     height: 100vh;
-    background-color:#ECAB55;
+    background-color:#ffffff;
     display: inline-block;
     width: 100%;
     display: flex;
@@ -82,7 +82,7 @@
   #home{
     color:#E8772E;
     height: 100vh;
-    background-color:#ECAB55;
+    background-color:#ffffff;
     display: inline-block;
     width: 100%;
     display: flex;
@@ -95,7 +95,7 @@
   #submit{
     color:#E8772E;
     height: 100vh;
-    background-color:#ECAB55;
+    background-color:#ffffff;
     display: inline-block;
     width: 100%;
     display: flex;
@@ -106,7 +106,7 @@
   #result{
     color:#E8772E;
     height: 100vh;
-    background-color:#ECAB55;
+    background-color:#ffffff;
     display: inline-block;
     width: 100%;
     display: flex;
