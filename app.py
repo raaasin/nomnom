@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, jsonify
+from sklearn.neighbors import NearestNeighbors  
 import pandas as pd
 import random
 
@@ -9,13 +10,13 @@ def index():
         try:
             mood = (request.form['mood'])
             budget = (request.form['budget'])
-            aesthetics = (request.form['aesthetics'])
+            aes = (request.form['aes'])
             type = (request.form['type'])
             diet = (request.form['diet'])
             df = pd.read_csv('vizag.csv')
             spicy_cuisines = ['Asian', 'Mexican', 'Indian']
             sweet_cuisines = ['Bakery', 'Cafe']
-            print(type,mood,budget,aesthetics,diet)
+            print(type,mood,budget,aes,diet)
             
             #filtering veg/nonveg
             if type == 'Nonveg':
@@ -43,16 +44,15 @@ def index():
                 filtered_df = filtered_df[filtered_df['Diet'] == 'Fast Food']
             else:
                 filtered_df = filtered_df[filtered_df['Diet'] == 'Healthy']
-
+            print(filtered_df)
             # Filter restaurants based on aesthetics
-            if aesthetics == 'Normal':
-                filtered_df = filtered_df
-            elif aesthetics == 'Good':
-                filtered_df = filtered_df[(filtered_df['Aesthetics'] == 'Normal') | (filtered_df['Aesthetics'] == 'Good')]
-            else:
-                filtered_df = filtered_df[filtered_df['Aesthetics'] == 'Aesthetic']
-
-            #sort using rating
+            filtered_df['Aesthetics'] = pd.to_numeric(filtered_df['Aesthetics'])
+            aesthetic_data = filtered_df[['Aesthetics']]
+            knn = NearestNeighbors(n_neighbors=10)
+            knn.fit(aesthetic_data)
+            _, indices = knn.kneighbors([[aes]])
+            filtered_df = filtered_df.iloc[indices[0]]
+            print(filtered_df)
             #print(filtered_df.head())
             sorted_df = filtered_df.sample(frac=1, random_state=random.seed())
             sorted_df = sorted_df.reset_index(drop=True)
