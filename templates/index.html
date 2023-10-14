@@ -199,22 +199,8 @@ h1  {
                 <h1>Aesthetics?</h1>
                 <div class="mood-options">
                     <label class="mood-option">
-                        <input type="radio" name="aesthetics" value="Normal">
-                        <i class="fas fa-star"></i>
-                        <span><h2>nay</h2></span>
-                    </label>
-                    <label class="mood-option">
-                        <input type="radio" name="aesthetics" value="Good">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span><h2>meh</h2></span>
-                    </label>
-                    <label class="mood-option">
-                        <input type="radio" name="aesthetics" value="Aesthetic">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span><h2>yay</h2></span>
+                <input type="range" id="aes" min="0" max="10" step="1">
+                <p id="selectedValue"><span id="valueDisplay">0</span></p>
                     </label>
                 </div>
                 <a href="#budget"><img src="../static/images/arrow.png" id="back"></a>
@@ -264,6 +250,17 @@ h1  {
 
 
 <script>
+// Get the range input and the value display element
+const aestheticsRange = document.getElementById("aes");
+const valueDisplay = document.getElementById("valueDisplay");
+
+// Add an event listener to update the selected value display
+aestheticsRange.addEventListener("input", function () {
+    valueDisplay.textContent = aestheticsRange.value;
+});
+
+// You can also set a default value (0 in this case)
+valueDisplay.textContent = aestheticsRange.value;
 
 // Check if "userName" exists in sessionStorage
 if (sessionStorage.getItem("userName")) {
