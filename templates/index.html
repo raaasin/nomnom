@@ -13,6 +13,11 @@
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='ext.css') }}">
     <style>
          @media (max-width: 768px) {
+            input[type=area]{
+    height: 80px;
+    width: 280px;
+    border: #fff;
+}
 
 body {
         font-size: 14px;
@@ -269,7 +274,7 @@ if (sessionStorage.getItem("userName")) {
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("myForm");
     const resultScreen = $("#result");
-    
+
     function initializeRedoButton() {
     const redoButton = document.createElement("button");
     redoButton.type = "reset";
