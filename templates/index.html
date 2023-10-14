@@ -253,6 +253,7 @@ h1  {
 
 
 <script>
+
 // Check if "userName" exists in sessionStorage
 if (sessionStorage.getItem("userName")) {
     // Get the "personal" element
@@ -268,7 +269,22 @@ if (sessionStorage.getItem("userName")) {
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("myForm");
     const resultScreen = $("#result");
+    
+    function initializeRedoButton() {
+    const redoButton = document.createElement("button");
+    redoButton.type = "reset";
+    redoButton.id = "redoEverything";
+    redoButton.innerHTML = 'Redo <i class="fa-solid fa-rotate-right fa-spin" style="color: #ffffff;"></i>';
+    resultScreen.append(redoButton);
 
+    redoButton.addEventListener("click", function () {
+        var personalElement = document.getElementById("personal");
+        var theirvalue = personalElement.value;
+        sessionStorage.setItem("userName", theirvalue);
+        location.reload();
+        window.location.href = "/";
+    });
+}
     form.addEventListener("submit", function (e) {
         e.preventDefault();
 
@@ -330,32 +346,20 @@ document.addEventListener("DOMContentLoaded", function () {
                         
 
                         // Add the "redo" button below the recommendations
-                        const redoButton = document.createElement("button");
-                        redoButton.type = "reset";
-                        redoButton.id = "redoEverything";
-                        redoButton.innerHTML = 'Redo <i class="fa-solid fa-rotate-right fa-spin" style="color: #ffffff;"></i>';
-                        resultScreen.append(redoButton);
-
-                        redoButton.addEventListener("click", function () {
-                            var personalElement = document.getElementById("personal");
-                            var theirvalue = personalElement.value;
-                            sessionStorage.setItem("userName", theirvalue);
-                            location.reload();
-                            window.location.href = "/";
-                            /*document.getElementById("personal").value=theivalue;*/
-                        });
-
+                        initializeRedoButton();
                         window.location.href = "#result";
                     } else {
                         const uname = document.createElement("p");
                         uname.textContent = document.getElementById("personal").value + ", You're taste is unlike others, unfortunately I cant find any 😔";
                         resultScreen.append(uname);
+                        initializeRedoButton();
                         window.location.href = "#result";
                     }
                 } else if (data.error) {
                     const uname = document.createElement("p");
                         uname.textContent = document.getElementById("personal").value + ", You're taste is unlike others, unfortunately I cant find any 😔";
                         resultScreen.append(uname);
+                        initializeRedoButton();
                     window.location.href = "#result";
                 }
             })
@@ -364,8 +368,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 const uname = document.createElement("p");
                 uname.textContent = document.getElementById("personal").value + ", You're taste is unlike others, unfortunately I cant find any 😔";
                 resultScreen.append(uname);
+                initializeRedoButton();
                 window.location.href = "#result";
-                theirname = document.getElementById("personal")
                 
             });
     });
