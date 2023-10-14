@@ -16,32 +16,6 @@ Nomnom is a web application that combines sentiment analysis, machine learning, 
 
 - **Machine Learning Enhancement**: Over time, the app learns from user interactions and feedback to refine its recommendations.
 
-## Getting Started
-
-Follow these steps to get started with Nomnom:
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/yourusername/nomnom.git
-   ```
-
-2. Install the required dependencies:
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. Prepare your restaurant dataset and save it as `restaurants.csv`.
-
-4. Run the Flask web application:
-
-   ```bash
-   python app.py
-   ```
-
-5. Access Nomnom by opening your web browser and navigating to `http://localhost:5000`.
-
 ## Usage
 
 1. Fill out the form with your current mood, hunger level, preferences, budget, restaurant aesthetics, type, and diet.
@@ -51,9 +25,5 @@ Follow these steps to get started with Nomnom:
 3. Click on the "Show Recommendations" button to view the recommended restaurants.
 
 4. Explore the recommended restaurants and make your dining choice!
-
-## Contributing
-
-We welcome contributions to improve Nomnom. If you'd like to contribute, please follow our [Contribution Guidelines](CONTRIBUTING.md).
 
 Happy dining with Nomnom! 🍽️
