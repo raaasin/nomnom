@@ -253,6 +253,18 @@ h1  {
 
 
 <script>
+// Check if "userName" exists in sessionStorage
+if (sessionStorage.getItem("userName")) {
+    // Get the "personal" element
+    var personalElement = document.getElementById("personal");
+
+    // Retrieve the user's name from sessionStorage
+    var userName = sessionStorage.getItem("userName");
+
+    // Set the value of the "personal" input to the stored name
+    personalElement.value = userName;
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("myForm");
     const resultScreen = $("#result");
@@ -325,7 +337,9 @@ document.addEventListener("DOMContentLoaded", function () {
                         resultScreen.append(redoButton);
 
                         redoButton.addEventListener("click", function () {
-                           /* theirvalue = document.getElementById("personal").value;*/
+                            var personalElement = document.getElementById("personal");
+                            var theirvalue = personalElement.value;
+                            sessionStorage.setItem("userName", theirvalue);
                             location.reload();
                             window.location.href = "/";
                             /*document.getElementById("personal").value=theivalue;*/
