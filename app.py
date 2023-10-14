@@ -79,13 +79,6 @@ def index():
         except:
             return jsonify({"something went wrong :/"})
 
-            
-            
-
-            
-            
-            
-
     return render_template('index.html', recommendations=[])
 
 if __name__ == '__main__':
