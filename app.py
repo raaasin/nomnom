@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 from sklearn.neighbors import NearestNeighbors  
 import pandas as pd
-import random
 
 app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
