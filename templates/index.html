@@ -297,14 +297,16 @@ document.addEventListener("DOMContentLoaded", function () {
         e.preventDefault();
 
         // Serialize form data into JSON
+        // Serialize form data into JSON
         const formData = new FormData(form);
+        formData.append('aes', aestheticsRange.value); // Append the aesthetic value to the FormData object
         const formDataObj = {};
         formData.forEach((value, key) => {
             formDataObj[key] = value;
         });
-
         console.log(formDataObj);
 
+        
         fetch("/", {
             method: "POST",
             headers: {

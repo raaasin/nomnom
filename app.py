@@ -10,7 +10,7 @@ def index():
         try:
             mood = (request.form['mood'])
             budget = (request.form['budget'])
-            aes = (request.form['aes'])
+            aes = int((request.form['aes']))
             type = (request.form['type'])
             diet = (request.form['diet'])
             df = pd.read_csv('vizag.csv')
@@ -45,20 +45,20 @@ def index():
             else:
                 filtered_df = filtered_df[filtered_df['Diet'] == 'Healthy']
             print(filtered_df)
+
             # Filter restaurants based on aesthetics
+            k = min(len(filtered_df), 10)  
             filtered_df['Aesthetics'] = pd.to_numeric(filtered_df['Aesthetics'])
             aesthetic_data = filtered_df[['Aesthetics']]
-            knn = NearestNeighbors(n_neighbors=10)
+            knn = NearestNeighbors(n_neighbors=k)
             knn.fit(aesthetic_data)
-            _, indices = knn.kneighbors([[aes]])
-            filtered_df = filtered_df.iloc[indices[0]]
+            indices = knn.kneighbors([[aes]])[1][0]  # Extract the first row of indices
+            filtered_df = filtered_df.iloc[indices]
             print(filtered_df)
             #print(filtered_df.head())
-            sorted_df = filtered_df.sample(frac=1, random_state=random.seed())
-            sorted_df = sorted_df.reset_index(drop=True)
 
             recommendations = []
-            for _, row in sorted_df.iterrows():
+            for _, row in filtered_df.iterrows():
                 restaurant_data = {
                     "Restaurant": row['Restaurant'],
                     "Rating": row['Rating'],
