@@ -290,5 +290,34 @@ p{
     z-index:1;
     text-align: left;
   }
+
+  input[type="range"] {
+    appearance: none; 
+    width: 100%; /* Set the width of the range bar */
+    height: 10px; /* Set the height of the range bar */
+    background: #E8772E; /* Set the background color of the range bar */
+    outline: none; /* Remove the outline */
+    opacity: 1; /* Set the opacity for the range bar */
+    -webkit-transition: 0.5s; /* Add a smooth transition effect */
+    transition: opacity 0.5s; /* Add a smooth transition effect */
+    border-radius: 10px;
+}
+
+/* Customize the range thumb (slider handle) */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Remove default styles for WebKit browsers */
+    appearance: none; /* Remove default styles for non-WebKit browsers */
+    width: 20px; /* Set the width of the range thumb */
+    height: 20px; /* Set the height of the range thumb */
+    background: #E8772E; /* Set the background color of the range thumb */
+    cursor: pointer; /* Add a cursor pointer on hover */
+    border-radius: 50%; /* Create a circular shape for the thumb */
+}
+
+/* Change the appearance of the range bar when it's in focus (click or tab navigation) */
+input[type="range"]:focus {
+    opacity: 1; /* Increase the opacity when in focus */
+}
+
   
 
