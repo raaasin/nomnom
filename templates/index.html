@@ -197,11 +197,13 @@ h1  {
             </div>
             <div id="aesthetics">
                 <h1>Aesthetics?</h1>
-                <div class="mood-options">
+                <div class="mood-options" style="flex-direction: column;">
                     <label class="mood-option">
                 <input type="range" id="aes" min="0" max="10" step="1">
-                <p id="selectedValue"><span id="valueDisplay">0</span></p>
                     </label>
+                    <lab class="mood-option" style="flex-direction: column;">
+                        <p id="selectedValue"><span id="valueDisplay">0</span></p>
+                    </lab>
                 </div>
                 <div class="arrow" style="flex-direction: row;"><a href="#budget" style="margin-right: 50px;"><img src="../static/images/arrow.png" id="back"></a><a href="#foodtype " style="margin-left: 50px;"><img src="../static/images/arrow.png" id="next"></a></div>
             </div><br>
@@ -282,7 +284,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const redoButton = document.createElement("button");
     redoButton.type = "reset";
     redoButton.id = "redoEverything";
-    redoButton.innerHTML = 'Redo <i class="fa-solid fa-rotate-right fa-spin" style="color: #ffffff;"></i>';
+    redoButton.innerHTML = 'Redo <i class="fa-solid fa-rotate-right fa-spin" style="color: #ffffff;"></i';
+
+    // Set the height and width
+    redoButton.style.height = "50px";
+    redoButton.style.width = "160px";
+    redoButton.style.marginTop = "5px";
+
     resultScreen.append(redoButton);
 
     redoButton.addEventListener("click", function () {
@@ -293,6 +301,7 @@ document.addEventListener("DOMContentLoaded", function () {
         window.location.href = "/";
     });
 }
+
     form.addEventListener("submit", function (e) {
         e.preventDefault();
 
@@ -323,6 +332,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     if (data.length > 0) {
                         const uname = document.createElement("p");
                         uname.textContent = document.getElementById("personal").value + ", Try these :)";
+                        uname.style.fontSize = "22px";
                         resultScreen.append(uname);
                         
                         const recommendationsList = document.createElement("ul");

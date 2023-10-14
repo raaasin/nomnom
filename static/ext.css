@@ -293,7 +293,7 @@ p{
 
   input[type="range"] {
     appearance: none; 
-    width: 100%; /* Set the width of the range bar */
+    width: 240px; /* Set the width of the range bar */
     height: 10px; /* Set the height of the range bar */
     background: #652F0B; /* Set the background color of the range bar */
     outline: none; /* Remove the outline */
