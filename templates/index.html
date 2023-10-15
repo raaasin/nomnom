@@ -361,6 +361,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 if (data && Array.isArray(data) && data.some(item => item.Restaurant)) {
                     if (data.length > 0) {
+                        console.log(data)
                         const uname = document.createElement("p");
                         uname.textContent = document.getElementById("personal").value + ", Try these :)";
                         uname.style.fontSize = "22px";
@@ -376,17 +377,29 @@ document.addEventListener("DOMContentLoaded", function () {
                             imgElement.src = recommendation.ImageURL;
                             imgElement.alt = recommendation.Restaurant;
                             
+                            const restaurantname=document.createElement("p");
+                            restaurantname.textContent=recommendation.Restaurant;
 
                             const restaurantLink = document.createElement("a");
                             restaurantLink.target = "_blank";
                             restaurantLink.href = recommendation.URL;
-                            restaurantLink.textContent = recommendation.Restaurant;
+
+                            const iconElement = document.createElement("i");
+                            iconElement.className = "fa-light fa-arrow-up-right-from-square";
+                            iconElement.style.color = "#652f0b";
+
+                            restaurantLink.appendChild(iconElement);
+
+                            const restaurantadd=document.createElement("p");
+                            restaurantadd.textContent=recommendation.Address;
 
                             const rating = document.createElement("p");
                             rating.textContent=recommendation.Rating + "⭐";
 
                             imgbox.append(imgElement);
+                            textbox.append(restaurantname);
                             textbox.append(restaurantLink);
+                            textbox.append(restaurantadd)
                             textbox.append(rating);
                             resbox.append(imgbox);
                             resbox.append(textbox);
