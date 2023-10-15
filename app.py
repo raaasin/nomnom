@@ -79,10 +79,10 @@ def index():
                 filtered_df['distance'] = filtered_df.apply(
                     lambda row: geodesic(user_location, (row['latitude'], row['longitude'])).kilometers, axis=1)
                 #print("location check done")
-                print(filtered_df.head())
+                #print(filtered_df.head())
                 filtered_df= filtered_df.sort_values(by='distance')
-                print("after correction with location")
-                print(filtered_df.head())
+                #print("after correction with location")
+                #print(filtered_df.head())
 
             
             recommendations = []
@@ -91,7 +91,9 @@ def index():
                     "Restaurant": row['Restaurant'],
                     "Rating": row['Rating'],
                     "URL": row['url'],
-                    "ImageURL": row['pic']
+                    "ImageURL": row['pic'],
+                    "Address":row['address']
+
                 }
                 recommendations.append(restaurant_data)
 
