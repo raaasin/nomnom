@@ -318,6 +318,21 @@ input[type="range"]::-webkit-slider-thumb {
 input[type="range"]:focus {
     opacity: 1; /* Increase the opacity when in focus */
 }
+.first-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.first-row p{
+  font-size: large;
+}
 
-  
+
+.second-row{
+  display: flex;
+  flex-direction: row;
+}
+.second-row p{
+  font-size: small;
+}
 
