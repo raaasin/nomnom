@@ -380,7 +380,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             imgElement.alt = recommendation.Restaurant;
                             
                             const restaurantname=document.createElement("p");
-                            restaurantname.textContent=recommendation.Restaurant + "   " + recommendation.Rating + "⭐";
+                            restaurantname.innerHTML = `${recommendation.Restaurant}&nbsp;<sup>${recommendation.Rating}&#9733;</sup>`;
 
                             const restaurantLink = document.createElement("a");
                             restaurantLink.target = "_blank";
