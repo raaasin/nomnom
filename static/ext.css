@@ -242,7 +242,7 @@ p{
   height: 19%; /* Change to auto for variable content height */
   display: flex;
   margin: 1%;
-  border: 2px solid #652F0B;
+  border: 2px dotted #652F0B;
   background-color: #FFF8D6;
   border-radius: 9px;
   align-items: center; /* Center content vertically */
@@ -250,12 +250,13 @@ p{
 }
 
 .img-container {
-  max-width: 250px;
-  max-height: 100px;
+  max-width: 35%;
+  max-height: 107%;
   overflow: hidden;
   display: inline-block;
-  margin-right: 10px; /* Add margin to separate the image from text */
+  margin-right:10px; /* Add margin to separate the image from text */
   border-radius: 15px;
+  margin-left:1px;
 }
 
 .img-container img {
@@ -324,7 +325,7 @@ input[type="range"]:focus {
   justify-content: space-between;
 }
 .first-row p{
-  font-size: large;
+  font-size: x-large;
 }
 
 
