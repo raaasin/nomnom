@@ -172,7 +172,7 @@ h1  {
                 </div>
                 
                 <br>
-            <a href="#name"><img src="../static/images/arrow.png" id="back"></a>
+            <a href="#name" class="back"><img src="../static/images/arrow.png" id="back"></a>
     
             </div>
             <div id="budget">
@@ -193,7 +193,7 @@ h1  {
                 </div>
                 <br>
                 
-            <a href="#mood"><img src="../static/images/arrow.png" id="back"></a>
+            <a href="#mood" class="back"><img src="../static/images/arrow.png" id="back"></a>
             </div>
             <div id="aesthetics">
                 <h1>Aesthetics?</h1>
@@ -205,7 +205,7 @@ h1  {
                         <p id="selectedValue"><span id="valueDisplay">0</span></p>
                     </lab>
                 </div>
-                <div class="arrow" style="flex-direction: row;"><a href="#budget" style="margin-right: 50px;"><img src="../static/images/arrow.png" id="back"></a><a href="#foodtype " style="margin-left: 50px;"><img src="../static/images/arrow.png" id="next"></a></div>
+                <div class="arrow" style="flex-direction: row;"><a href="#budget" style="margin-right: 50px;" class="back"><img src="../static/images/arrow.png" id="back"></a><a href="#foodtype " style="margin-left: 50px;"><img src="../static/images/arrow.png" id="next"></a></div>
             </div><br>
               
             </div>
@@ -221,7 +221,7 @@ h1  {
                         <img src="../static/images/non veg.png" alt="Nonveg">
                     </label>
                 </div><br>
-                <a href="#aesthetics"><img src="../static/images/arrow.png" id="back"></a>
+                <a href="#aesthetics" class="back"><img src="../static/images/arrow.png" id="back"></a>
             </div>
             <div id="diet">
                 <h1>Healthy, Moderate or Calories ?</h1><br>
@@ -239,7 +239,7 @@ h1  {
                         <img src="../static/images/fast food.png" alt="Fast Food">
                     </label>
                 </div><br>
-                <a href="#foodtype"><img src="../static/images/arrow.png" id="back"></a>
+                <a href="#foodtype" class="back"><img src="../static/images/arrow.png" id="back"></a>
             </div>
             <div id="submit">
                 <button type="submit" id="submitButton">Get Recommendations</button>
@@ -252,7 +252,6 @@ h1  {
 
 
 <script>
-// Create a global object to store location data
 const globalLocationData = {
     latitude: null,
     longitude: null
