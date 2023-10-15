@@ -373,19 +373,21 @@ document.addEventListener("DOMContentLoaded", function () {
                             var resbox = $("<div class='res-container'></div>");
                             var imgbox = $("<div class='img-container'></div>");
                             var textbox= $("<div class='text-container'></div>");
+                            var firstrow = $("<div class='first-row'></div>");
+                            var secondrow = $("<div class='second-row'></div>")
                             const imgElement = document.createElement("img");
                             imgElement.src = recommendation.ImageURL;
                             imgElement.alt = recommendation.Restaurant;
                             
                             const restaurantname=document.createElement("p");
-                            restaurantname.textContent=recommendation.Restaurant;
+                            restaurantname.textContent=recommendation.Restaurant + "   " + recommendation.Rating + "⭐";
 
                             const restaurantLink = document.createElement("a");
                             restaurantLink.target = "_blank";
                             restaurantLink.href = recommendation.URL;
 
                             const iconElement = document.createElement("i");
-                            iconElement.className = "fa-light fa-arrow-up-right-from-square";
+                            iconElement.className = "fa-solid fa-arrow-up-right-from-square fa-2xs";
                             iconElement.style.color = "#652f0b";
 
                             restaurantLink.appendChild(iconElement);
@@ -393,14 +395,13 @@ document.addEventListener("DOMContentLoaded", function () {
                             const restaurantadd=document.createElement("p");
                             restaurantadd.textContent=recommendation.Address;
 
-                            const rating = document.createElement("p");
-                            rating.textContent=recommendation.Rating + "⭐";
 
                             imgbox.append(imgElement);
-                            textbox.append(restaurantname);
-                            textbox.append(restaurantLink);
-                            textbox.append(restaurantadd)
-                            textbox.append(rating);
+                            firstrow.append(restaurantname);
+                            firstrow.append(restaurantLink);
+                            secondrow.append(restaurantadd)   
+                            textbox.append(firstrow);
+                            textbox.append(secondrow);
                             resbox.append(imgbox);
                             resbox.append(textbox);
                             resultScreen.append(resbox);
