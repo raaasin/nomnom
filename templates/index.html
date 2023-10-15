@@ -146,7 +146,7 @@ h1  {
             <img src="../static/images/mainlogo.png" class="logo">
            <h1>Not sure where to eat? <br> 
          Don't worry nom nom got your back</h1>
-            <a href="#name"><button>Try nom nom <i class="fa-solid fa-burger fa-bounce" style="color: #ffffff;"></i></i></button></a>
+            <a href="#name"><button id="gps">Try nom nom <i class="fa-solid fa-burger fa-bounce" style="color: #ffffff;"></i></i></button></a>
         </div>
         <form method="post" id="myForm">
             <div id="name">
@@ -252,6 +252,34 @@ h1  {
 
 
 <script>
+// Create a global object to store location data
+const globalLocationData = {
+    latitude: null,
+    longitude: null
+};
+
+// Function to request user location
+function requestLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((position) => {
+            globalLocationData.latitude = position.coords.latitude;
+            globalLocationData.longitude = position.coords.longitude;
+            sessionStorage.setItem('latitude',globalLocationData.latitude);
+            sessionStorage.setItem('longitude',globalLocationData.longitude);
+        });
+    } else {
+        console.error('Geolocation is not supported by this browser.');
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const getLocationButton = document.getElementById("gps");
+    getLocationButton.addEventListener("click", () => {
+        //request user location
+        requestLocation();
+    });
+});
+
 // Get the range input and the value display element
 const aestheticsRange = document.getElementById("aes");
 const valueDisplay = document.getElementById("valueDisplay");
@@ -309,6 +337,10 @@ document.addEventListener("DOMContentLoaded", function () {
         // Serialize form data into JSON
         const formData = new FormData(form);
         formData.append('aes', aestheticsRange.value); // Append the aesthetic value to the FormData object
+        if(sessionStorage.getItem('latitude')){
+        formData.append('latitude',sessionStorage.getItem('latitude'));
+        formData.append('longitude',sessionStorage.getItem('longitude'));
+        }
         const formDataObj = {};
         formData.forEach((value, key) => {
             formDataObj[key] = value;
