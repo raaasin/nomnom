@@ -251,19 +251,21 @@ p{
 
 .img-container {
   max-width: 35%;
-  max-height: 107%;
+  max-height: 100%;
   overflow: hidden;
   display: inline-block;
   margin-right:10px; /* Add margin to separate the image from text */
   border-radius: 15px;
   margin-left:1px;
+  align-items: center;
+  justify-content: center;
 }
 
 .img-container img {
   width: 100%;
-  height: 80%;
-  padding-right: 10px;
-  border-radius: 15px;
+  height: 100%;
+  object-fit: fill; /* Scale the image to fit within the container */
+  object-position: center; 
 }
 
 .text-container {
