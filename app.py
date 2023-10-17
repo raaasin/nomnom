@@ -32,7 +32,7 @@ def index():
             if type == 'Nonveg':
                 filtered_df = df[(df['Type'] == 'Both') | (df['Type'] == 'Non-vegetarian')]
             else:
-                filtered_df = df[df['Type'] == 'Vegetarian']
+                filtered_df = df[df['Type'] == 'Both']
 
             #filtering emotions
 
@@ -83,6 +83,11 @@ def index():
                 filtered_df= filtered_df.sort_values(by='distance')
                 #print("after correction with location")
                 #print(filtered_df.head())
+            if type == 'Veg':
+                if filtered_df[(filtered_df['Type'] == 'Fast Food')].empty:
+                    filtered_df=filtered_df[(filtered_df['Type'] == 'Both')]
+                else:
+                    filtered_df=filtered_df[(filtered_df['Type'] == 'Fast Food')]     
 
             
             recommendations = []
