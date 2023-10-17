@@ -38,10 +38,10 @@ def index():
 
             if mood == 'Happy':
                 mood_cuisines = spicy_cuisines
-                filtered_df = filtered_df[filtered_df['Cuisine'].isin(mood_cuisines)]
+                #filtered_df = filtered_df[filtered_df['Cuisine'].isin(mood_cuisines)]
             elif mood == 'Sad':
                 mood_cuisines = sweet_cuisines
-                filtered_df = filtered_df[filtered_df['Cuisine'].isin(mood_cuisines)]
+                #filtered_df = filtered_df[filtered_df['Cuisine'].isin(mood_cuisines)]
             else:
                 pass
 
