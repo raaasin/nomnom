@@ -1,123 +1,152 @@
-*{
+* {
   font-family: 'Balsamiq Sans', cursive;
-  }
-  
-    /* Change the background color of navbar on hover */
-  
-  html{
-    scroll-behavior: smooth;
-  }
-  body{
-    margin: 0;
-    padding: 0;
-    overflow:hidden;
-    background-color: #FFF8D6;
+}
 
-  }
-  #mood{
-    color : #652F0B;
-    height: 100vh;
-    background-color:#FFF8D6;
-    width: 100%;
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    flex-direction: column;
-    
-  }
-  #name{
-    color : #652F0B;
-    height: 100vh;
-    background-color:#FFF8D6;
-    display: inline-block;
-    width: 100%;
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-  }
-  #budget{
-    color : #652F0B;
-    height: 100vh;
-    background-color:#FFF8D6;
-    display: inline-block;
-    width: 100%;
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    flex-direction: column;
-  }
-  #aesthetics{
-    color : #652F0B;
-    height: 100vh;
-    background-color:#FFF8D6;
-    display: inline-block;
-    width: 100%;
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    flex-direction: column;
-  }
-  #foodtype{
-    color : #652F0B;
-    height: 100vh;
-    background-color:#FFF8D6;
-    display: inline-block;
-    width: 100%;
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    flex-direction: column;
-  }
-  #diet{
-    color : #652F0B;
-    height: 100vh;
-    background-color:#FFF8D6;
-    display: inline-block;
-    width: 100%;
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    flex-direction: column;
-  }
-  #home{
-    color : #652F0B;
-    height: 100vh;
-    background-color:#FFF8D6;
-    display: inline-block;
-    width: 100%;
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    flex-direction: column;
-  
-  }
+/* Change the background color of navbar on hover */
 
-  #submit{
-    color : #652F0B;
-    height: 100vh;
-    background-color:#FFF8D6;
-    display: inline-block;
-    width: 100%;
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    flex-direction: column;
-  }
-  #result{
-    color : #652F0B;
-    height: 100vh;
-background-color:#FFF8D6;
-    display: inline-block;
-    width: 100%;
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    flex-direction: column;
-  }
-  .hidden{
-    display: none;
-  }
-  /* Hide the radio buttons */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #FFF8D6;
+
+}
+
+#mood {
+  color: #652F0B;
+  height: 100vh;
+  background-color: #FFF8D6;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* Center horizontally */
+  align-items: center;
+  /* Center vertically */
+  flex-direction: column;
+
+}
+
+#name {
+  color: #652F0B;
+  height: 100vh;
+  background-color: #FFF8D6;
+  display: inline-block;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* Center horizontally */
+  align-items: center;
+  /* Center vertically */
+}
+
+#budget {
+  color: #652F0B;
+  height: 100vh;
+  background-color: #FFF8D6;
+  display: inline-block;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* Center horizontally */
+  align-items: center;
+  /* Center vertically */
+  flex-direction: column;
+}
+
+#aesthetics {
+  color: #652F0B;
+  height: 100vh;
+  background-color: #FFF8D6;
+  display: inline-block;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* Center horizontally */
+  align-items: center;
+  /* Center vertically */
+  flex-direction: column;
+}
+
+#foodtype {
+  color: #652F0B;
+  height: 100vh;
+  background-color: #FFF8D6;
+  display: inline-block;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* Center horizontally */
+  align-items: center;
+  /* Center vertically */
+  flex-direction: column;
+}
+
+#diet {
+  color: #652F0B;
+  height: 100vh;
+  background-color: #FFF8D6;
+  display: inline-block;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* Center horizontally */
+  align-items: center;
+  /* Center vertically */
+  flex-direction: column;
+}
+
+#home {
+  color: #652F0B;
+  text-align: center;
+  height: 100vh;
+  background-color: #FFF8D6;
+  display: inline-block;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+  /* Center horizontally */
+  align-items: center;
+  /* Center vertically */
+}
+
+#submit {
+  color: #652F0B;
+  height: 100vh;
+  background-color: #FFF8D6;
+  display: inline-block;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* Center horizontally */
+  align-items: center;
+  /* Center vertically */
+  flex-direction: column;
+}
+
+#result {
+  color: #652F0B;
+  height: 100vh;
+  background-color: #FFF8D6;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* Center horizontally */
+  align-items: center;
+  /* Center vertically */
+}
+
+.hidden {
+  display: none;
+}
+
+/* Hide the radio buttons */
 .mood-option input[type="radio"] {
   display: none;
 }
@@ -132,24 +161,32 @@ background-color:#FFF8D6;
 
 /* Add styles for when labels are clicked */
 .mood-option:hover {
-  background-color:none; 
+  background-color: none;
 }
-.mood-option img:hover{
-  transform: scale(1.1); /* Scale the image to 110% of its original size */
+
+.mood-option img:hover {
+  transform: scale(1.1);
+  /* Scale the image to 110% of its original size */
   transition: transform 0.5s ease;
 }
+
 /* Style the images */
 .mood-option img {
-  width: 175px; /* Adjust the image width as needed */
-  height: 175px; /* Adjust the image height as needed */
-  border: 2px solid transparent; /* Add a border to the images */
+  width: 175px;
+  /* Adjust the image width as needed */
+  height: 175px;
+  /* Adjust the image height as needed */
+  border: 2px solid transparent;
+  /* Add a border to the images */
   margin-left: 20px;
 }
 
 /* Style the selected label */
-.mood-option input[type="radio"]:checked + img {
-  border-color:none;/* Change the border color for the selected image */
+.mood-option input[type="radio"]:checked+img {
+  border-color: none;
+  /* Change the border color for the selected image */
 }
+
 button {
   background-color: #652F0B;
   color: #fff;
@@ -157,96 +194,114 @@ button {
   padding: 10px 20px;
   border-radius: 8px;
   cursor: pointer;
-  height:60px;
-  width:200px;
-  font-size:20px;
+  height: 60px;
+  width: 200px;
+  font-size: 20px;
   transition: 0.5ms;
 }
 
 /* Hover effect (optional) */
 button:hover {
   background-color: #421f07;
-  transform: scale(1.1); /* Scale the image to 110% of its original size */
+  transform: scale(1.1);
+  /* Scale the image to 110% of its original size */
   transition: transform 0.5s ease;
 }
-#next{
-    height: 50px;
-    width: 50px;
-    top: 50px;
+
+#next {
+  height: 50px;
+  width: 50px;
+  top: 50px;
 }
-#back{
-    height: 50px;
-    width: 50px;
-    transform: rotate(180deg);
+
+#back {
+  height: 50px;
+  width: 50px;
+  transform: rotate(180deg);
 }
-input[type=area]{
-    border-radius: 7px;
-    background-color: #652F0B;
-    color: white;
-    margin: 0px;
-    height: 80px;
-    width: 350px;
-    border: #fff;
-    outline-color : #652F0B;
-    caret-color: #652F0B;
-    margin: 15px;
-    font-size: 50px;
+
+input[type=area] {
+  border-radius: 7px;
+  background-color: #652F0B;
+  color: white;
+  margin: 0px;
+  height: 80px;
+  width: 350px;
+  border: #fff;
+  outline-color: #652F0B;
+  caret-color: #652F0B;
+  margin: 15px;
+  font-size: 50px;
 }
+
 input[type="area"]::selection {
-    font-size: xx-large;
-    border-color: #652F0B;
+  font-size: xx-large;
+  border-color: #652F0B;
 }
+
 ::selection {
-    color:#FFF8D6;
-    background: #652F0B;
-  }
-  ::-moz-selection { /* Code for Firefox */
-    color: #FFF8D6;
-    background: #652F0B;
-  }
-  
+  color: #FFF8D6;
+  background: #652F0B;
+}
+
+::-moz-selection {
+  /* Code for Firefox */
+  color: #FFF8D6;
+  background: #652F0B;
+}
+
 ul {
-    list-style: none; /* Remove bullet points */
-    font-size: 80px; /* Adjust font size as needed, e.g., 2em to match h1 */
+  list-style: none;
+  /* Remove bullet points */
+  font-size: 80px;
+  /* Adjust font size as needed, e.g., 2em to match h1 */
 }
-h1{
-font-size:90px;
+
+h1 {
+  font-size: 90px;
 }
-#submitButton{
-    background-color: #652F0B;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    height: 200px;
-    width: 500px;
-    font-size: 30px;
-    border-radius: 7px;
+
+#submitButton {
+  background-color: #652F0B;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  height: 200px;
+  width: 500px;
+  font-size: 30px;
+  border-radius: 7px;
 }
-.logo{
+
+.logo {
   display: flex;
-  position:absolute;
-  top:20px;
+  position: absolute;
+  top: 20px;
   height: 100px;
-width: auto;
+  width: auto;
 }
-p{
+
+p {
   color: #652F0B;
   align-items: center;
   margin: 10px;
   font-size: 40px;
 }
+
 .res-container {
   width: 60%;
-  height: 19%; /* Change to auto for variable content height */
+  height: 19%;
+  /* Change to auto for variable content height */
   display: flex;
   margin: 1%;
   border: 2px dotted #652F0B;
   background-color: #FFF8D6;
   border-radius: 9px;
-  align-items: center; /* Center content vertically */
-  padding: 10px; /* Add padding for spacing */
+  align-items: center;
+  /* Center content vertically */
+  padding: 10px;
+  /* Add padding for spacing */
 }
 
 .img-container {
@@ -254,9 +309,10 @@ p{
   max-height: 100%;
   overflow: hidden;
   display: inline-block;
-  margin-right:10px; /* Add margin to separate the image from text */
+  margin-right: 10px;
+  /* Add margin to separate the image from text */
   border-radius: 15px;
-  margin-left:1px;
+  margin-left: 1px;
   align-items: center;
   justify-content: center;
 }
@@ -264,8 +320,9 @@ p{
 .img-container img {
   width: 100%;
   height: 100%;
-  object-fit: fill; /* Scale the image to fit within the container */
-  object-position: center; 
+  object-fit: fill;
+  /* Scale the image to fit within the container */
+  object-position: center;
 }
 
 .text-container {
@@ -274,68 +331,261 @@ p{
   display: flex;
   flex-direction: column;
   position: relative;
- 
+
 }
 
-.text-container p {/*rating*/
+.text-container p {
+  /*rating*/
   /* Apply styles to rating */
-  font-size: large; /* Change to large font size */
-  margin: 0; /* Remove any default margin */
-  color:#652F0B;
+  font-size: large;
+  /* Change to large font size */
+  margin: 0;
+  /* Remove any default margin */
+  color: #652F0B;
   text-align: left;
 }
 
-.text-container a { /*anchor*/
-    position: relative;
-    color: #652F0B;
-    font-size: xx-large;
-    top:-5px;
-    z-index:1;
-    text-align: left;
-  }
+.text-container a {
+  /*anchor*/
+  position: relative;
+  color: #652F0B;
+  font-size: xx-large;
+  top: -5px;
+  z-index: 1;
+  text-align: left;
+}
 
-  input[type="range"] {
-    appearance: none; 
-    width: 240px; /* Set the width of the range bar */
-    height: 10px; /* Set the height of the range bar */
-    background: #652F0B; /* Set the background color of the range bar */
-    outline: none; /* Remove the outline */
-    opacity: 1; /* Set the opacity for the range bar */
-    -webkit-transition: 0.5s; /* Add a smooth transition effect */
-    transition: opacity 0.5s; /* Add a smooth transition effect */
-    border-radius: 10px;
+input[type="range"] {
+  appearance: none;
+  width: 240px;
+  /* Set the width of the range bar */
+  height: 10px;
+  /* Set the height of the range bar */
+  background: #652F0B;
+  /* Set the background color of the range bar */
+  outline: none;
+  /* Remove the outline */
+  opacity: 1;
+  /* Set the opacity for the range bar */
+  -webkit-transition: 0.5s;
+  /* Add a smooth transition effect */
+  transition: opacity 0.5s;
+  /* Add a smooth transition effect */
+  border-radius: 10px;
 }
 
 /* Customize the range thumb (slider handle) */
 input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Remove default styles for WebKit browsers */
-    appearance: none; /* Remove default styles for non-WebKit browsers */
-    width: 20px; /* Set the width of the range thumb */
-    height: 20px; /* Set the height of the range thumb */
-    background: #652F0B; /* Set the background color of the range thumb */
-    cursor: pointer; /* Add a cursor pointer on hover */
-    border-radius: 50%; /* Create a circular shape for the thumb */
+  -webkit-appearance: none;
+  /* Remove default styles for WebKit browsers */
+  appearance: none;
+  /* Remove default styles for non-WebKit browsers */
+  width: 20px;
+  /* Set the width of the range thumb */
+  height: 20px;
+  /* Set the height of the range thumb */
+  background: #652F0B;
+  /* Set the background color of the range thumb */
+  cursor: pointer;
+  /* Add a cursor pointer on hover */
+  border-radius: 50%;
+  /* Create a circular shape for the thumb */
 }
 
 /* Change the appearance of the range bar when it's in focus (click or tab navigation) */
 input[type="range"]:focus {
-    opacity: 1; /* Increase the opacity when in focus */
+  opacity: 1;
+  /* Increase the opacity when in focus */
 }
-.first-row{
+
+.first-row {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.first-row p{
+
+.first-row p {
   font-size: x-large;
 }
 
 
-.second-row{
+.second-row {
   display: flex;
   flex-direction: row;
 }
-.second-row p{
+
+.second-row p {
   font-size: small;
 }
 
+@media (max-width: 768px) {
+
+  .img-container {
+    max-width: 35%;
+    max-height: 60%;
+  }
+
+
+  .fa-2xs {
+    font-size: .5em;
+  }
+
+  .first-row p {
+    font-size: small;
+  }
+
+  .second-row p {
+    font-size: xx-small;
+  }
+
+  input[type=area] {
+    height: 80px;
+    width: 280px;
+    border: #fff;
+  }
+
+  #result {
+    color: #E8772E;
+    height: 100vh;
+    background-color: #FFF8D6;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+  }
+
+  body {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 23px;
+  }
+
+  .logo {
+    display: block;
+    position: absolute;
+    height: 120px;
+    width: 120px;
+  }
+
+  .logo img {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80px;
+    overflow: hidden;
+    max-height: 80px;
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    justify-content: center;
+    display: block;
+  }
+
+  #name {
+    margin-top: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Optional: Center items horizontally */
+    justify-content: center;
+    /* Optional: Center items vertically */
+    text-align: center;
+    /* Optional: Center text horizontally */
+    top: 50%;
+  }
+
+  .mood-option img {
+    width: 75px;
+    /* Adjust the image width as needed */
+    height: 75px;
+    /* Adjust the image height as needed */
+    border: 2px solid transparent;
+    /* Add a border to the images */
+    margin-left: 0px;
+    margin: 0px;
+  }
+
+  .mood-options {
+    display: block;
+    flex-direction: column;
+  }
+
+  #aesthetics .mood-option {
+    flex-direction: row;
+    margin-bottom: 18px;
+  }
+
+  #submitButton {
+    height: 112px;
+    width: 336px;
+  }
+
+  .res-container {
+    width: 80%;
+    height: 15%;
+  }
+
+  p {
+    display: block;
+    margin-block-start: 90px;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+  }
+}
+
+#aesthetics {
+  text-align: center;
+}
+
+.mood-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+  /* Added margin for spacing */
+}
+
+.mood-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5px 110px;
+}
+
+.mood-option:hover {
+  transform: scale(1.1);
+  transition: transform 0.5s ease;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+label {
+  cursor: pointer;
+}
+
+.fas {
+  font-size: 36px;
+}
+
+/* Customize the selected radio button */
+input[type="radio"]:checked+label .fas {
+  color: #E8772E;
+}
+
+h2 {
+  display: inline;
+}
+
+.fas fa-star {
+  display: inline;
+}
+
+#myForm {
+  overflow-x: hidden;
+}
