@@ -201,7 +201,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
     form.addEventListener("submit", function (e) {
         e.preventDefault();
+        const submitButton = document.getElementById("submitButton");
+        submitButton.disabled = true;
+        let intervalId;
+        let textIndex = 0;
+        const loadingText = ["Loading", "Loading.", "Loading..", "Loading..."];
+        intervalId = setInterval(function() {
+                submitButton.textContent = loadingText[textIndex];
+                textIndex = (textIndex + 1) % loadingText.length;
+            }, 500); // Change text every half-second
 
+            // Clear the interval after 3 seconds
+            setTimeout(function() {
+                clearInterval(intervalId);
+                submitButton.textContent = "Submit";
+                submitButton.disabled = false;
+            }, 3000);
+        
         // Serialize form data into JSON
         // Serialize form data into JSON
         const formData = new FormData(form);
