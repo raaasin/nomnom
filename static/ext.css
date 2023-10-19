@@ -141,6 +141,9 @@ body {
   align-items: center;
   /* Center vertically */
 }
+#result p{
+  margin: 2px;
+}
 
 .hidden {
   display: none;
