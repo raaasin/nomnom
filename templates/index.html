@@ -76,7 +76,8 @@
                         <p id="selectedValue"><span id="valueDisplay">0</span></p>
                     </lab>
                 </div>
-                <div class="arrow" style="flex-direction: row;"><a href="#budget" style="margin-right: 50px;" class="back"><img src="../static/images/arrow.png" id="back"></a><a href="#foodtype " style="margin-left: 50px;"><img src="../static/images/arrow.png" id="next"></a></div>
+                <div class="arrow" style="flex-direction: row;">
+                    <a href="#budget" style="margin-right: 50px;" class="back"><img src="../static/images/arrow.png" id="back"></a><a href="#foodtype" style="margin-left: 50px;"><img src="../static/images/arrow.png" id="next"></a></div>
             </div><br>
               
             </div>
@@ -84,11 +85,11 @@
                 <h1>Veggie Delight or Meaty Marvel</h1><br>
                 <div class="mood-options">
                     <label class="mood-option">
-                        <input type="radio" name="type" value="Veg">
+                        <input type="radio" name="foodtype" value="Veg">
                         <img src="../static/images/veg.png" alt="Veg">
                     </label>
                     <label class="mood-option">
-                        <input type="radio" name="type" value="Nonveg">
+                        <input type="radio" name="foodtype" value="Nonveg">
                         <img src="../static/images/non veg.png" alt="Nonveg">
                     </label>
                 </div><br>
@@ -363,7 +364,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 document.addEventListener("DOMContentLoaded", function() {
-    const radioButtons = document.querySelectorAll('input[name="type"]');
+    const radioButtons = document.querySelectorAll('input[name="foodtype"]');
     
     radioButtons.forEach(function(radioButton) {
         radioButton.addEventListener("change", function() {
@@ -377,6 +378,31 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+document.addEventListener("DOMContentLoaded",()=>{
+    // Method to clear the previous input
+    const backButtons = document.querySelectorAll(".back")
+    backButtons.forEach((btn)=>{
+        btn.addEventListener("click",()=>{
+            const prevElementName = btn.getAttribute("href").replace("#",'')
+            const prevRadioButtons = document.getElementsByName(prevElementName);
+            Array.from(prevRadioButtons).forEach((radioButton) => {
+                radioButton.checked=false;
+            });
+        })
+    })
+    // Method to clear the next input
+    const nextButtons = document.querySelectorAll("#next")
+    nextButtons.forEach((btn)=>{
+        btn.addEventListener("click",()=>{
+            const nextElementName = btn.parentElement.getAttribute("href").replace("#",'')
+            const nextRadioButtons = document.getElementsByName(nextElementName);
+            Array.from(nextRadioButtons).forEach((radioButton) => {
+                radioButton.checked=false;
+            });
+        })
+    })
+
+})
 document.addEventListener("DOMContentLoaded", function() {
     const radioButtons = document.querySelectorAll('input[name="diet"]');
     
