@@ -19,7 +19,7 @@ def index():
             mood = (request.form['mood'])
             budget = (request.form['budget'])
             aes = int((request.form['aes']))
-            type = (request.form['type'])
+            type = (request.form['foodtype'])
             diet = (request.form['diet'])
         
 
