@@ -122,6 +122,10 @@
 
 
 <script>
+        if (window.location.hash) {
+            // Scroll to the top of the page to hide the hash fragment
+            window.location.href = "/";
+        }
 const globalLocationData = {
     latitude: null,
     longitude: null
