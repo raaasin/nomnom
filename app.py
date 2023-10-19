@@ -115,8 +115,5 @@ def index():
             return jsonify({"something went wrong :/"})
 
     return render_template('index.html', recommendations=[])
-@app.route('Ads.txt')
-def Ads():
-    return render_template('Ads.txt')
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=8000)
