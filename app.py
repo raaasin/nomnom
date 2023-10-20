@@ -4,6 +4,7 @@ import pandas as pd
 from geopy.distance import geodesic
 import warnings
 from sklearn.exceptions import DataConversionWarning
+import datetime
 
 warnings.filterwarnings("ignore", category=DataConversionWarning)
 
@@ -24,8 +25,7 @@ def index():
         
         
             df = pd.read_csv('vizag.csv')
-            happy_cuisines = ['South Indian', 'North Indian', 'American', 'Italian','Continental']
-            sad_cuisines = ['Beverages', 'Bakery','Street Food','Chinese','Arab']
+
             print(type,mood,budget,aes,diet)
 
             #filtering veg/nonveg
@@ -35,17 +35,59 @@ def index():
                 filtered_df = df[df['Type'] == 'Both']
 
             #filtering emotions
+            # Get the current time
+            current_time = datetime.datetime.now().time()
+
+            # Convert the current time to a string in a format like "Morning," "Afternoon," "Evening," or "Night"
+            if current_time < datetime.time(12, 0):
+                time = 'Morning'
+            elif current_time < datetime.time(17, 0):
+                time = 'Afternoon'
+            elif current_time < datetime.time(20, 0):
+                time = 'Evening'
+            else:
+                time = 'Night'
+
+            # Filtering emotions
+            happy_cuisines = ['South Indian', 'North Indian', 'American', 'Italian', 'Continental']
+            sad_cuisines = ['Beverages', 'Bakery', 'Street Food', 'Chinese', 'Arab']
 
             if mood == 'Happy':
                 mood_cuisines = happy_cuisines
-                filtered_df = filtered_df[filtered_df['Cuisine'].isin(mood_cuisines)]
             elif mood == 'Sad':
                 mood_cuisines = sad_cuisines
-                filtered_df = filtered_df[filtered_df['Cuisine'].isin(mood_cuisines)]
             else:
-                pass
+                mood_cuisines = []  # No mood-based filter
 
-            
+            # Time-based suggestions
+            if time == 'Morning':
+                time_cuisines = ['South Indian', 'Street Food']
+            elif time == 'Afternoon':
+                time_cuisines = ['South Indian', 'North Indian', 'Continental']
+            elif time == 'Evening':
+                time_cuisines = ['American', 'Italian', 'Chinese']
+            elif time == 'Night':
+                time_cuisines = ['North Indian']
+            else:
+                time_cuisines = []  # No time-based filter
+
+            # Combine mood and time filters
+            if mood_cuisines and time_cuisines:
+                suggested_cuisines = list(set(mood_cuisines) or set(time_cuisines))
+            elif mood_cuisines:
+                suggested_cuisines = mood_cuisines
+            elif time_cuisines:
+                suggested_cuisines = time_cuisines
+            else:
+                suggested_cuisines = []  # No specific suggestions
+
+            # Filter the DataFrame based on the suggested cuisines
+            if suggested_cuisines:
+                filtered_df = filtered_df[filtered_df['Cuisine'].isin(suggested_cuisines)]
+            else:
+                pass  # No filtering based on mood or time
+
+                        
 
             filtered_df = filtered_df[filtered_df['Budget'] == budget]
 
