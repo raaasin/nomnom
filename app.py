@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify,send_from_directory
 from sklearn.neighbors import NearestNeighbors  
 import pandas as pd
 from geopy.distance import geodesic
@@ -8,7 +8,7 @@ from sklearn.exceptions import DataConversionWarning
 warnings.filterwarnings("ignore", category=DataConversionWarning)
 
 
-app = Flask(__name__)
+app = Flask(__name__,static_folder='static')
 @app.route('/', methods=['GET', 'POST'])
 
 
@@ -115,5 +115,10 @@ def index():
             return jsonify({"something went wrong :/"})
 
     return render_template('index.html', recommendations=[])
+
+@app.route('/Ads.txt')
+def static_from_root():
+ return send_from_directory(app.static_folder, request.path[1:])
+
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=8000)
