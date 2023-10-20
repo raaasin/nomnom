@@ -22,26 +22,26 @@ def index():
             type = (request.form['foodtype'])
             diet = (request.form['diet'])
         
-
+        
             df = pd.read_csv('vizag.csv')
-            spicy_cuisines = ['Asian', 'Mexican', 'Indian']
-            sweet_cuisines = ['Bakery', 'Cafe']
-            #print(type,mood,budget,aes,diet)
+            happy_cuisines = ['South Indian', 'North Indian', 'American', 'Italian']
+            sad_cuisines = ['Beverages', 'Bakery']
+            print(type,mood,budget,aes,diet)
 
             #filtering veg/nonveg
             if type == 'Nonveg':
-                filtered_df = df[(df['Type'] == 'Both') | (df['Type'] == 'Non-vegetarian')]
+                filtered_df = df[(df['Type'] == 'Both') | (df['Type'] == 'Non Veg')]
             else:
                 filtered_df = df[df['Type'] == 'Both']
 
             #filtering emotions
 
             if mood == 'Happy':
-                mood_cuisines = spicy_cuisines
-                #filtered_df = filtered_df[filtered_df['Cuisine'].isin(mood_cuisines)]
+                mood_cuisines = happy_cuisines
+                filtered_df = filtered_df[filtered_df['Cuisine'].isin(mood_cuisines)]
             elif mood == 'Sad':
-                mood_cuisines = sweet_cuisines
-                #filtered_df = filtered_df[filtered_df['Cuisine'].isin(mood_cuisines)]
+                mood_cuisines = sad_cuisines
+                filtered_df = filtered_df[filtered_df['Cuisine'].isin(mood_cuisines)]
             else:
                 pass
 
@@ -58,9 +58,9 @@ def index():
             else:
                 filtered_df = filtered_df[filtered_df['Diet'] == 'Healthy']
 
-
+            print("Doing aesthetic check")
             # Filter restaurants based on aesthetics
-            k = min(len(filtered_df), 5)  
+            k = min(5, len(filtered_df))  
             filtered_df['Aesthetics'] = pd.to_numeric(filtered_df['Aesthetics'])
             aesthetic_data = filtered_df[['Aesthetics']]
             knn = NearestNeighbors(n_neighbors=k)
@@ -68,7 +68,7 @@ def index():
             indices = knn.kneighbors([[aes]])[1][0]  # Extract the first row of indices
             filtered_df = filtered_df.iloc[indices]
            
-            #print("aesthetic check done")
+            print("aesthetic check done")
 
             user_location=None
             #print(filtered_df.head())
@@ -84,10 +84,10 @@ def index():
                 #print("after correction with location")
                 #print(filtered_df.head())
             if type == 'Veg':
-                if filtered_df[(filtered_df['Type'] == 'Fast Food')].empty:
+                if filtered_df[(filtered_df['Type'] == 'Veg')].empty:
                     filtered_df=filtered_df[(filtered_df['Type'] == 'Both')]
                 else:
-                    filtered_df=filtered_df[(filtered_df['Type'] == 'Fast Food')]     
+                    filtered_df=filtered_df[(filtered_df['Type'] == 'Veg')]     
 
             
             recommendations = []
