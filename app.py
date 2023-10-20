@@ -24,8 +24,8 @@ def index():
         
         
             df = pd.read_csv('vizag.csv')
-            happy_cuisines = ['South Indian', 'North Indian', 'American', 'Italian']
-            sad_cuisines = ['Beverages', 'Bakery']
+            happy_cuisines = ['South Indian', 'North Indian', 'American', 'Italian','Continental']
+            sad_cuisines = ['Beverages', 'Bakery','Street Food','Chinese','Arab']
             print(type,mood,budget,aes,diet)
 
             #filtering veg/nonveg
@@ -49,10 +49,9 @@ def index():
 
             filtered_df = filtered_df[filtered_df['Budget'] == budget]
 
-
-            #filtering with diet
+            # filtering with diet
             if diet == 'Moderate':
-                filtered_df = filtered_df
+                filtered_df = filtered_df[(filtered_df['Diet'] == 'Moderate') | (filtered_df['Diet'] == 'Healthy')]
             elif diet == 'Fast Food':
                 filtered_df = filtered_df[filtered_df['Diet'] == 'Fast Food']
             else:
@@ -60,7 +59,7 @@ def index():
 
             print("Doing aesthetic check")
             # Filter restaurants based on aesthetics
-            k = min(5, len(filtered_df))  
+            k = min(5, len(filtered_df))
             filtered_df['Aesthetics'] = pd.to_numeric(filtered_df['Aesthetics'])
             aesthetic_data = filtered_df[['Aesthetics']]
             knn = NearestNeighbors(n_neighbors=k)
