@@ -235,7 +235,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 clearInterval(intervalId);
                 submitButton.textContent = "Submit";
                 submitButton.disabled = false;
-            }, 5000);
+            }, 6000);
         
         // Serialize form data into JSON
         // Serialize form data into JSON
@@ -249,7 +249,7 @@ document.addEventListener("DOMContentLoaded", function () {
         formData.forEach((value, key) => {
             formDataObj[key] = value;
         });
-        console.log(formDataObj);
+        //console.log(formDataObj);
 
         
         fetch("/", {
@@ -263,12 +263,30 @@ document.addEventListener("DOMContentLoaded", function () {
             .then((data) => {
                 // Handle the response (data) from the server
                 resultScreen.innerHTML = ''; // Clear previous content
+                const mappings = {
+                                mood: { "Happy": "happy.png", "Unsure": "unsure.png", "Sad": "sad.png" },
+                                budget: { "Cheap": "broke.png", "Medium": "moderate.png", "Expensive": "rich.png" },
+                                aes: {"1":"1.png","0":"0.png","3":"3.png","4":"4.png","5":"5.png","6":"6.png","2":"2.png","7":"7.png","8":"8.png","9":"9.png","10":"10.png"},
+                                foodtype: { "Veg": "veg.png", "Nonveg": "non veg.png" },
+                                diet: { "Healthy": "healthy.png", "Moderate": "moderate food.png", "Fast Food": "fast food.png" }
+                                };
 
                 if (data && Array.isArray(data) && data.some(item => item.Restaurant)) {
                     if (data.length > 0) {
-                        console.log(data)
+                        //console.log(data)
+                        for (const category in formDataObj) {
+                        if (formDataObj[category]) {
+                            if (mappings[category]) {
+                            // Create an img element for the icon.
+                            const iconImg = document.createElement("img");
+                            iconImg.src = `../static/images/${mappings[category][formDataObj[category]]}`;
+                            iconImg.alt = formDataObj[category];
+                            iconImg.style.width = "1.3em"; // Set the image width to fit the font size.
+
+                            resultScreen.append(iconImg);
+                            }}}
                         const uname = document.createElement("p");
-                        uname.textContent = document.getElementById("personal").value + ", Try these :)";
+                        uname.textContent = document.getElementById("personal").value + "for "+"insert the above icons here"+", Try these :)";
                         
                         uname.style.fontSize = "22px";
                         resultScreen.append(uname);
