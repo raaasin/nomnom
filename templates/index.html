@@ -274,6 +274,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (data && Array.isArray(data) && data.some(item => item.Restaurant)) {
                     if (data.length > 0) {
                         //console.log(data)
+                        const iconImages = [];
+
                         for (const category in formDataObj) {
                         if (formDataObj[category]) {
                             if (mappings[category]) {
@@ -281,15 +283,25 @@ document.addEventListener("DOMContentLoaded", function () {
                             const iconImg = document.createElement("img");
                             iconImg.src = `../static/images/${mappings[category][formDataObj[category]]}`;
                             iconImg.alt = formDataObj[category];
-                            iconImg.style.width = "1.3em"; // Set the image width to fit the font size.
+                            iconImg.style.width = "1em"; // Set the image width to fit the font size.
+                            iconImg.style.height = "1em";
+                            iconImages.push(iconImg);
+                            }
+                        }
+                        }
 
-                            resultScreen.append(iconImg);
-                            }}}
                         const uname = document.createElement("p");
-                        uname.textContent = document.getElementById("personal").value + "for "+"insert the above icons here"+", Try these :)";
-                        
-                        uname.style.fontSize = "22px";
+                        uname.textContent = document.getElementById("personal").value + " for ";
+
+                        iconImages.forEach((iconImg) => {
+                        uname.append(iconImg);
+                        });
+
+                        const textNode = document.createTextNode(", Try these :)");
+                        uname.append(textNode);
+
                         resultScreen.append(uname);
+
                         
                         const recommendationsList = document.createElement("ul");
 
