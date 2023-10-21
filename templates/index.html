@@ -233,7 +233,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // Clear the interval after 5 seconds
             setTimeout(function() {
                 clearInterval(intervalId);
-                submitButton.textContent = "Submit";
+                submitButton.textContent = "Please wait!";
                 submitButton.disabled = false;
             }, 6000);
         
@@ -283,8 +283,8 @@ document.addEventListener("DOMContentLoaded", function () {
                             const iconImg = document.createElement("img");
                             iconImg.src = `../static/images/${mappings[category][formDataObj[category]]}`;
                             iconImg.alt = formDataObj[category];
-                            iconImg.style.width = "1em"; // Set the image width to fit the font size.
-                            iconImg.style.height = "1em";
+                            iconImg.style.width = "0.8em"; // Set the image width to fit the font size.
+                            iconImg.style.height = "0.8em";
                             iconImages.push(iconImg);
                             }
                         }
@@ -296,6 +296,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                         iconImages.forEach((iconImg) => {
                         uname.append(iconImg);
+                        uname.append(" ")
                         });
 
                         const textNode = document.createTextNode(", Try these :)");
@@ -352,24 +353,70 @@ document.addEventListener("DOMContentLoaded", function () {
                         window.location.href = "#result";
                     } else {
                         const uname = document.createElement("p");
-                        uname.textContent = document.getElementById("personal").value + ", You're taste is unlike others, unfortunately I cant find any 😔";
+                        uname.textContent = document.getElementById("personal").value + ", first error 😔";
                         resultScreen.append(uname);
                         initializeRedoButton();
                         window.location.href = "#result";
                     }
                 } else if (data.error) {
-                    const uname = document.createElement("p");
-                        uname.textContent = document.getElementById("personal").value + ", You're taste is unlike others, unfortunately I cant find any 😔";
+                    const iconImages = [];
+                        for (const category in formDataObj) {
+                        if (formDataObj[category]) {
+                            if (mappings[category]) {
+                            // Create an img element for the icon.
+                            const iconImg = document.createElement("img");
+                            iconImg.src = `../static/images/${mappings[category][formDataObj[category]]}`;
+                            iconImg.alt = formDataObj[category];
+                            iconImg.style.width = "0.8em"; // Set the image width to fit the font size.
+                            iconImg.style.height = "0.8em";
+                            iconImages.push(iconImg);
+                            }
+                        }
+                        }
+                        const uname = document.createElement("p");
+                        uname.id = "uname";
+                        uname.textContent = document.getElementById("personal").value + " for ";
+                        iconImages.forEach((iconImg) => {
+                        uname.append(iconImg);
+                        uname.append(" ")
+                        });
+                        const textNode = document.createTextNode(", We couln't find any 😔");
+                        uname.append(textNode);
                         resultScreen.append(uname);
                         initializeRedoButton();
                     window.location.href = "#result";
                 }
             })
             .catch((error) => {
-                console.error("Error:", error);
-                const uname = document.createElement("p");
-                uname.textContent = document.getElementById("personal").value + ", You're taste is unlike others, unfortunately I cant find any 😔";
-                resultScreen.append(uname);
+                const mappings = {
+                                mood: { "Happy": "happy.png", "Unsure": "unsure.png", "Sad": "sad.png" },
+                                budget: { "Cheap": "broke.png", "Medium": "moderate.png", "Expensive": "rich.png" },
+                                aes: {"1":"1.png","0":"0.png","3":"3.png","4":"4.png","5":"5.png","6":"6.png","2":"2.png","7":"7.png","8":"8.png","9":"9.png","10":"10.png"},
+                                foodtype: { "Veg": "veg.png", "Nonveg": "non veg.png" },
+                                diet: { "Healthy": "healthy.png", "Moderate": "moderate food.png", "Fast Food": "fast food.png" }
+                                };
+                                const iconImages = [];
+                        for (const category in formDataObj) {
+                        if (formDataObj[category]) {
+                            if (mappings[category]) {
+                            // Create an img element for the icon.
+                            const iconImg = document.createElement("img");
+                            iconImg.src = `../static/images/${mappings[category][formDataObj[category]]}`;
+                            iconImg.alt = formDataObj[category];
+                            iconImg.style.width = "0.8em"; // Set the image width to fit the font size.
+                            iconImg.style.height = "0.8em";
+                            iconImages.push(iconImg);
+                            }
+                        }
+                        }
+                        const uname = document.createElement("p");
+                        uname.id = "uname";
+                        uname.textContent = "No results for ";
+                        iconImages.forEach((iconImg) => {
+                        uname.append(iconImg);
+                        uname.append(" ")
+                        });
+                        resultScreen.append(uname);
                 initializeRedoButton();
                 window.location.href = "#result";
                 

@@ -454,7 +454,7 @@ input[type="range"]:focus {
     background-color: #FFF8D6;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     gap: 5px;
   }
@@ -532,13 +532,13 @@ input[type="range"]:focus {
     height: 15%;
   }
 
-  p {
+ /* p {
     display: block;
     margin-block-start: 90px;
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
-  }
+  }*/
   #uname{
     font-size: 24px;
   }
