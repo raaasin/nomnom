@@ -361,6 +361,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
                         // Add the "redo" button below the recommendations
                         initializeRedoButton();
+                        const help = document.createElement("a");
+                        help.href = "https://forms.gle/LDLYtraiPQ2PHx9a6";
+                        help.id="help";
+                        help.textContent = "contribute to nomnom";
+                        help.target="_blank";
+                        resultScreen.append(help);
                         window.location.href = "#result";
                     } else {
                         const uname = document.createElement("p");
@@ -429,6 +435,12 @@ document.addEventListener("DOMContentLoaded", function () {
                         });
                         resultScreen.append(uname);
                 initializeRedoButton();
+                const help = document.createElement("a");
+                help.href = "https://forms.gle/LDLYtraiPQ2PHx9a6";
+                help.textContent = "Contribute to nomnom";
+                help.id="help";
+                help.target="_blank";
+                resultScreen.append(help);
                 window.location.href = "#result";
                 
             });

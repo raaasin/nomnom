@@ -596,3 +596,8 @@ h2 {
 #myForm {
   overflow-x: hidden;
 }
+#help{
+  margin: 5px;
+  font-size: x-small;
+  color: #652F0B;
+}
