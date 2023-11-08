@@ -28,7 +28,7 @@ def filter_mood(df, mood):
     
     return df[df['Cuisine'].isin(mood_cuisines)] if mood_cuisines else df
 
-
+#to modify mood parameter
 def filter_budget(df, budget):
     return df[df['Budget'] == budget]
 
