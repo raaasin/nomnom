@@ -16,7 +16,7 @@ def load_data(filename):
 def filter_food_type(df, food_type):
     if food_type == 'Nonveg':
         return df[(df['Type'] == 'Both') | (df['Type'] == 'Non Veg')]
-    return df[df['Type'] == 'Both']
+    return df[df['Type'] == 'Both' | (df['Type'] == 'Veg')]
 
 def filter_mood(df, mood):
     if mood == 'Happy':
@@ -160,6 +160,17 @@ def get_current_time():
         return 'Evening'
     else:
         return 'Night'
-
+@app.route('/morning', methods=['GET'])
+def morning():
+    return render_template('morning.html')
+@app.route('/afternoon', methods=['GET'])
+def afternoon():
+    return render_template('afternoon.html')
+@app.route('/evening', methods=['GET'])
+def evening():
+    return render_template('evening.html')
+@app.route('/night', methods=['GET'])
+def night():
+    return render_template('night.html')
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=8000)
