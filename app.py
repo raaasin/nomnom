@@ -84,7 +84,7 @@ def magic(df,time,diet,mood):
     elif time == 'evening':
         if diet == 'Fast Food':
             if mood == 'Happy':
-                return df[(df['Cuisine'] == 'Chinese') | (df['Cuisine'] == 'Street Food') | (df['Cuisine'] == 'American')]
+                return df[(df['Cuisine'] == 'Chinese') | (df['Cuisine'] == 'Street Food') | (df['Cuisine'] == 'American') | (df['Cuisine'] == 'Italian')]
             elif mood == 'Sad':
                 return df[(df['Cuisine'] == 'Street Food') | (df['Cuisine'] == 'Chinese') | (df['Cuisine'] == 'Bakery')]
             else:
