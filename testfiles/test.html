@@ -1,0 +1,43 @@
+<!-- FILEPATH: /c:/Users/dell/Documents/Projects/Current/nomnom/test.html -->
+
+<button onclick="sendRequest()">Send Request</button>
+
+<div id="response"></div>
+
+<script>
+    function sendRequest() {
+        const data = {
+            aes: "5",
+            budget: "Medium",
+            diet: "Moderate",
+            foodtype: "Nonveg",
+            mood: "Unsure"
+        };
+
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', 'https://7f05-2409-40f0-103b-3d63-8046-b1c5-9285-e11b.ngrok-free.app/', true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+
+        xhr.onload = function () {
+            if (xhr.status >= 200 && xhr.status < 300) {
+                const responseData = JSON.parse(xhr.responseText);
+                console.log(responseData);  // Log the response to the console
+
+                const responseDiv = document.getElementById('response');
+                responseDiv.innerHTML = JSON.stringify(responseData);
+            } else {
+                console.error('Request failed with status:', xhr.status);
+                const responseDiv = document.getElementById('response');
+                responseDiv.innerHTML = 'Request failed';
+            }
+        };
+
+        xhr.onerror = function () {
+            console.error('Network error occurred');
+            const responseDiv = document.getElementById('response');
+            responseDiv.innerHTML = 'Network error';
+        };
+
+        xhr.send(JSON.stringify(data));
+    }
+</script>

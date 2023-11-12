@@ -5,10 +5,14 @@ from geopy.distance import geodesic
 import warnings
 from sklearn.exceptions import DataConversionWarning
 import datetime
+from flask_cors import CORS
+
 
 warnings.filterwarnings("ignore", category=DataConversionWarning)
 
 app = Flask(__name__, static_folder='static')
+app = Flask(__name__)
+CORS(app)
 
 def get_recommendations(filtered_df):
     recommendations = []
@@ -183,19 +187,19 @@ def algorithm(data):
 
 
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/', methods=['POST'])
 def index():
     if request.method == 'POST':
         try:
-            data= request.form.to_dict()
+            data= request.get_json()
             answer=algorithm(data)
             return answer 
-        
+
         except Exception as e:
             return jsonify({"error": str(e)})
 
-    return render_template('index.html', recommendations=[])
-
+    print("not if")
+    return jsonify({"get?": "yes"})
 
 @app.route('/morning', methods=['GET'])
 def morning():
