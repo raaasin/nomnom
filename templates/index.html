@@ -160,12 +160,22 @@ const globalLocationData = {
 // Function to request user location
 function requestLocation() {
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition((position) => {
-            globalLocationData.latitude = position.coords.latitude;
-            globalLocationData.longitude = position.coords.longitude;
-            sessionStorage.setItem('latitude',globalLocationData.latitude);
-            sessionStorage.setItem('longitude',globalLocationData.longitude);
-        });
+        const watchId = navigator.geolocation.watchPosition(
+            (position) => {
+                globalLocationData.latitude = position.coords.latitude;
+                globalLocationData.longitude = position.coords.longitude;
+                sessionStorage.setItem('latitude', globalLocationData.latitude);
+                sessionStorage.setItem('longitude', globalLocationData.longitude);
+            },
+            (error) => {
+                console.error('Error getting the user location:', error);
+            }
+        );
+
+        // Clear the watch after 5 minutes (300,000 milliseconds)
+        setTimeout(() => {
+            navigator.geolocation.clearWatch(watchId);
+        }, 300000); // 300,000 milliseconds = 5 minutes
     } else {
         console.error('Geolocation is not supported by this browser.');
     }
