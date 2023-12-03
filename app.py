@@ -35,7 +35,8 @@ def curr_time():
         return "evening"
     else:
         return "night"
-    
+
+#create a new page for the recommendations
 def magic(df,time,diet,mood):
     if time == 'morning':
         if diet == 'Fast Food':
